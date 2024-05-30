@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("TitilliumWeb-Regular.ttf");
+}
+
+h1.splash {
+  font-size: 80px;
+}
+
+h1 {
+  text-align: center;
+}
+
+footer {
+  padding: 10px;
+  color: #ffffff;
+  background-color: #2c3340;
+  text-align: center;
+  position: sticky; 
+  width: 100%-20px;  /*minus the padding left and right*/
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+main {
+  color: #ffffff;
+  background-image: url("photo-1553877522-43269d4ea984.jpg");
+  padding: 70px 0 100px; /* Added padding at the bottom to create space for the footer */
+  min-height: calc(100vh - 110px); /* Ensures main content takes up at least the viewport height minus footer height */
+}
+
+body {
+  margin: 0px;
+  font-family: "Titillium Web";
+}
+
