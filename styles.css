@@ -35,7 +35,7 @@ main {
   color: #ffffff;
   background-image: url("photo-1553877522-43269d4ea984.jpg");
   padding: 70px 0 100px; /* Added padding at the bottom to create space for the footer */
-  min-height: calc(100vh - 110px); /* Ensures main content takes up at least the viewport height minus footer height */
+#  min-height: calc(100vh - 110px); /* Ensures main content takes up at least the viewport height minus footer height */
 }
 
 body {
