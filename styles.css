@@ -24,7 +24,7 @@ footer {
   color: #ffffff;
   background-color: #2B3040;
   text-align: center;
-  position: sticky; 
+#  position: sticky; 
   width: 100%-20px;  /*minus the padding left and right*/
   bottom: 0;
   left: 0;
