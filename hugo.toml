@@ -1,4 +1,4 @@
-baseURL = 'https://kontainer-sh.github.io/'
+baseURL = 'https://kontainer.sh/'
 languageCode = 'de-de'
 title = 'KONTAINER.SH GmbH'
 theme = 'kontainer.sh'
