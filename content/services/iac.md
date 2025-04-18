@@ -1,6 +1,6 @@
 +++
 date = '2025-04-07T10:43:31+02:00'
-draft = true
+draft = false
 title = 'Implementierung von Infrastructure as Code (IaC)'
 weight = 30
 +++

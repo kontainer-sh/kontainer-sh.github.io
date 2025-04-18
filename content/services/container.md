@@ -1,6 +1,6 @@
 +++
 date = '2025-04-07T10:43:50+02:00'
-draft = true
+draft = false
 title = 'Containerisierung und Orchestrierung'
 weight = 40
 +++

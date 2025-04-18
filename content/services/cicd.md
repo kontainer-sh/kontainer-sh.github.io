@@ -1,6 +1,6 @@
 +++
 date = '2025-04-07T10:45:08+02:00'
-draft = true
+draft = false
 title = 'Continuous Integration/Continuous Delivery (CI/CD) Pipeline-Entwicklung'
 weight = 20
 +++

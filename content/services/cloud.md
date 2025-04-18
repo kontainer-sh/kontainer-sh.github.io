@@ -1,6 +1,6 @@
 +++
 date = '2025-04-07T10:44:08+02:00'
-draft = true
+draft = false
 title = 'Cloud-Migration und -Optimierung'
 weight = 50
 +++

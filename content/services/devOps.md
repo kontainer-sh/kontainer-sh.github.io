@@ -1,6 +1,6 @@
 +++
 date = '2025-04-04T11:41:36+02:00'
-draft = true
+draft = false
 title = 'DevOps-Bewertung und -Strategie'
 weight = 10
 +++
