@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ partial "banner.html" . }}
+  <h1>{{ .Content }}</h1>
+  <div class="container">
+    {{ range site.RegularPages}}
+      <div class="box">
+        <h2>{{ .LinkTitle }}</h2>
+        {{ .Summary }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

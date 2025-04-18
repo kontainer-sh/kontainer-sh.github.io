@@ -1,0 +1,7 @@
+baseURL = 'https://kontainer.sh/'
+languageCode = 'de-de'
+title = 'KONTAINER.SH GmbH'
+theme = 'kontainer.sh'
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

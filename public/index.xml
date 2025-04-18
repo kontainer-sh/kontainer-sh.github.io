@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on KONTAINER.SH GmbH</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on KONTAINER.SH GmbH</description>
+    <generator>Hugo</generator>
+    <language>de-de</language>
+    <lastBuildDate>Mon, 07 Apr 2025 10:45:08 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps-Bewertung und -Strategie</title>
+      <link>http://localhost:1313/services/devops/</link>
+      <pubDate>Fri, 04 Apr 2025 11:41:36 +0200</pubDate>
+      <guid>http://localhost:1313/services/devops/</guid>
+      <description>&lt;p&gt;Erhalten Sie Einblicke in Ihren aktuellen DevOps-Reifegrad und erhalten Sie einen Fahrplan, um Ihren gewünschten Zustand zu erreichen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Continuous Integration/Continuous Delivery (CI/CD) Pipeline-Entwicklung</title>
+      <link>http://localhost:1313/services/cicd/</link>
+      <pubDate>Mon, 07 Apr 2025 10:45:08 +0200</pubDate>
+      <guid>http://localhost:1313/services/cicd/</guid>
+      <description>&lt;p&gt;Optimieren Sie Ihren Software-Bereitstellungsprozess für schnellere und zuverlässigere Veröffentlichungen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Implementierung von Infrastructure as Code (IaC)</title>
+      <link>http://localhost:1313/services/iac/</link>
+      <pubDate>Mon, 07 Apr 2025 10:43:31 +0200</pubDate>
+      <guid>http://localhost:1313/services/iac/</guid>
+      <description>&lt;p&gt;Automatisieren Sie die Bereitstellung und Verwaltung von Infrastruktur, um die Skalierbarkeit zu erhöhen und manuelle Fehler zu reduzieren.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Containerisierung und Orchestrierung</title>
+      <link>http://localhost:1313/services/container/</link>
+      <pubDate>Mon, 07 Apr 2025 10:43:50 +0200</pubDate>
+      <guid>http://localhost:1313/services/container/</guid>
+      <description>&lt;p&gt;Nutzen Sie die Vorteile von Containern und Orchestrierungsplattformen wie Kubernetes, um agile und skalierbare Anwendungsbereitstellung zu ermöglichen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cloud-Migration und -Optimierung</title>
+      <link>http://localhost:1313/services/cloud/</link>
+      <pubDate>Mon, 07 Apr 2025 10:44:08 +0200</pubDate>
+      <guid>http://localhost:1313/services/cloud/</guid>
+      <description>&lt;p&gt;Migrieren Sie Ihre Workloads nahtlos in die Cloud und optimieren Sie die Cloud-Infrastruktur für Kosteneffizienz und Leistung.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Überwachungs- und Protokollierungslösungen</title>
+      <link>http://localhost:1313/services/ueberwachung/</link>
+      <pubDate>Mon, 07 Apr 2025 10:44:32 +0200</pubDate>
+      <guid>http://localhost:1313/services/ueberwachung/</guid>
+      <description>&lt;p&gt;Implementieren Sie robuste Überwachungs- und Protokollierungslösungen, um Echtzeit-Einblicke in die Leistung und Gesundheit der Anwendung zu erhalten.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

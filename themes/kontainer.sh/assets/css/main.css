@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-Regular.ttf");
+}
+
+body {
+  margin: 0px;
+  font-family: "Titillium Web";
+}
+
+header {
+  margin-bottom: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: #00e;
+  text-decoration: none;
+}
+
+h1.banner {
+  font-size:5em;
+  text-align: center;
+  color: #ffffff;
+  background-image: url("../images/photo-1553877522-43269d4ea984.jpg");
+  padding: 2em 0 2em;
+  margin:0;
+}
+
+@media only screen and (max-width: 768px) {
+  h1.banner {
+    font-size: 2.5em;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.box {
+  background-color: #2B3040;
+  color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+.box h2 {
+  margin-top: 0;
+}
+
+.cta {
+  text-align: center;
+  padding: 20px;
+}
+.cta a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #54FFE3;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.cta a:hover {
+  background-color: #2B3040;
+  color: #fff;
+}
+
+footer {
+  color: #ffffff;
+  margin-top: 1em;
+  background-color: #2B3040;
+  text-align: center;
+  padding: 10px;
+}

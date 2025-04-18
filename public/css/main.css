@@ -1,46 +1,39 @@
 @font-face {
   font-family: "Titillium Web";
-  src: url("TitilliumWeb-Regular.ttf");
+  src: url("../fonts/TitilliumWeb-Regular.ttf");
 }
 
-h1.splash {
-  font-size: 80px;
+body {
+  margin: 0px;
+  font-family: "Titillium Web";
 }
 
-@media only screen and (max-width: 768px) {
-
-  h1.splash {
-    font-size: 40px;
-  }
-
+header {
+  margin-bottom: 1em;
 }
 
 h1 {
   text-align: center;
 }
 
-footer {
-  padding: 10px;
-  color: #ffffff;
-  background-color: #2B3040;
+a {
+  color: #00e;
+  text-decoration: none;
+}
+
+h1.banner {
+  font-size:5em;
   text-align: center;
-#  position: sticky; 
-  width: 100%-20px;  /*minus the padding left and right*/
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-}
-
-main {
   color: #ffffff;
-  background-image: url("photo-1553877522-43269d4ea984.jpg");
-  padding: 70px 0 100px; /* Added padding at the bottom to create space for the footer */
-#  min-height: calc(100vh - 110px); /* Ensures main content takes up at least the viewport height minus footer height */
+  background-image: url("../images/photo-1553877522-43269d4ea984.jpg");
+  padding: 2em 0 2em;
+  margin:0;
 }
 
-body {
-  margin: 0px;
-  font-family: "Titillium Web";
+@media only screen and (max-width: 768px) {
+  h1.banner {
+    font-size: 2.5em;
+  }
 }
 
 .container {
@@ -49,6 +42,7 @@ body {
   gap: 20px;
   padding: 20px;
 }
+
 .box {
   background-color: #2B3040;
   color: #fff;
@@ -61,6 +55,7 @@ body {
 .box h2 {
   margin-top: 0;
 }
+
 .cta {
   text-align: center;
   padding: 20px;
@@ -77,4 +72,12 @@ body {
 .cta a:hover {
   background-color: #2B3040;
   color: #fff;
+}
+
+footer {
+  color: #ffffff;
+  margin-top: 1em;
+  background-color: #2B3040;
+  text-align: center;
+  padding: 10px;
 }
