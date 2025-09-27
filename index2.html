@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>kontainer.sh – DevOps Knowledge</title>
+<meta name="description" content="Tutorials, Templates & Tools für moderne Infrastruktur – CI/CD, Kubernetes & IaC – immer getestet, immer aktuell.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family:titillium web;
+  src:url(TitilliumWeb-Regular.ttf)
+}
+@font-face {
+  font-family:titillium-bold web;
+  src:url(TitilliumWeb-Bold.ttf)
+}  
+:root{
+  --bg:#0c1624;            /* Grundhintergrund */
+  --bg-hero:#0f1b2b;       /* Hero-Farbton */
+  --bg-soft:#112238;
+  --card:#17283f;
+  --card-2:#152234;
+  --line:#243953;
+  --text:#e8f0fb;
+  --muted:#b9c7de;
+  --accent:#2bd3b5;
+  --accent-600:#18b89d;
+  --badge:#b7f3e9;
+  --badge-text:#08332c;
+  --price:#37e0b0;
+  --shadow: 0 18px 48px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.25);
+  --shadow-soft: 0 10px 26px rgba(0,0,0,.28), 0 1px 6px rgba(0,0,0,.22);
+  --r:18px; --r-sm:14px; --maxw:1180px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font:16px/1.6 "titillium web",system-ui,Segoe UI,Roboto,Arial,sans-serif; color:var(--text);
+  background:
+    radial-gradient(1200px 700px at 65% -10%, #203050 0%, var(--bg-hero) 55%) no-repeat,
+    var(--bg);
+}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+h1,h2,h3{margin:0 0 10px;}
+h1{font-size:clamp(30px,4.5vw,54px); line-height:1.15; font-family: "titillium-bold web"; letter-spacing: -0.5px; line-height: 1.2;}
+h2{font-size:22px}
+h3{font-size:18px}
+.muted{color:var(--muted)}
+
+/* Header */
+header{
+  position:sticky; top:0; z-index:20;
+  background:linear-gradient(180deg, rgba(15,27,43,.96), rgba(15,27,43,.78));
+  border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(140%) blur(6px);
+}
+.nav{height:70px; display:flex; align-items:center; justify-content:space-between}
+.brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+.logo{
+  width:36px; height:36px; border-radius:999px;
+  background:conic-gradient(from 220deg, #27e5c6, #17b1a0 40%, #0ea3c0 70%, #27e5c6);
+  display:grid; place-items:center; box-shadow: inset 0 0 0 3px rgba(255,255,255,.06);
+}
+.logo:before{content:"k"; font-weight:800; color:#0d2233}
+.menu{display:flex; gap:28px; align-items:center}
+.menu a{color:var(--muted); font-weight:600}
+.menu a:hover{color:#fff}
+.btn, .btn-ghost{
+  display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px;
+  font-weight:700; border:1px solid transparent; cursor:pointer
+}
+.btn{background:var(--accent); color:#08232e}
+.btn:hover{background:var(--accent-600)}
+.btn-ghost{border-color:#2a415f; color:var(--muted)}
+.btn-ghost:hover{border-color:#3b5a82; color:#fff}
+
+/* Hero */
+.hero{padding:78px 0 24px}
+.chip{
+  display:inline-flex; align-items:center; gap:10px; padding:7px 12px; border-radius:999px;
+  background:#0f2136; border:1px solid var(--line); color:#bfe1ff; font-size:13px; margin-bottom:14px
+}
+.chip .ok{display:inline-grid; place-items:center; width:18px; height:18px; border-radius:999px; background:#0bbc8a}
+.hero p{margin:8px 0 22px; color:#c6d4ea; font-size:18px}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+
+/* Grid & cards */
+section{padding:24px 0}
+.grid{display:grid; gap:16px; grid-template-columns:repeat(12,1fr)}
+.card{
+  background:linear-gradient(180deg, var(--card), var(--card-2));
+  border:1px solid var(--line); border-radius:var(--r);
+  padding:18px; box-shadow:var(--shadow-soft); position:relative
+}
+.card:hover{transform:translateY(-2px); transition:.18s ease; box-shadow:var(--shadow)}
+.k{grid-column:span 4}
+.k6{grid-column:span 6}
+.k8{grid-column:span 8}
+.k12{grid-column:span 12}
+
+/* Pill label */
+.pill{
+  display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px;
+  background:rgba(43,211,181,.12); border:1px solid rgba(43,211,181,.35);
+  color:#bffcf2; font-weight:700; font-size:12px; margin-bottom:10px
+}
+
+/* Tutorial badge */
+.badge{
+  position:absolute; left:16px; bottom:14px;
+  background:var(--badge); color:var(--badge-text);
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 10px; border-radius:999px; font-weight:800; font-size:12px
+}
+
+/* Repo list cards */
+.repo{display:flex; align-items:center; justify-content:space-between; gap:16px}
+.repo strong{display:block; font-size:16px}
+.star{display:inline-flex; align-items:center; gap:8px; opacity:.95}
+
+/* Products column */
+.price{color:var(--price); font-weight:800}
+
+/* Newsletter big bar */
+.news-wrap{padding:10px 0 0}
+.newsbar{
+  background:linear-gradient(180deg, var(--card), #122033);
+  border:1px solid var(--line); border-radius:calc(var(--r) + 6px);
+  box-shadow:var(--shadow); padding:22px
+}
+.newsbar h3{margin:0 0 6px}
+.form{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:8px}
+.input{
+  flex:1 1 360px; min-width:260px; padding:14px 16px; border-radius:999px;
+  background:#0e1b2c; color:#eaf2ff; border:1px solid #2b415f; outline:none
+}
+.input::placeholder{color:#7e96b8}
+
+/* Footer */
+footer{padding:26px 0 48px; color:#c2d2e9; border-top:1px solid var(--line); margin-top:20px}
+.foot{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px}
+.foot a{color:#cfe0ff}
+.foot a:hover{color:#fff}
+
+/* Responsive */
+@media (max-width:1100px){
+  .k{grid-column:span 6}
+  .k8{grid-column:span 12}
+  .k6{grid-column:span 12}
+}
+@media (max-width:760px){
+  .menu{display:none}
+  .k{grid-column:span 12}
+  .hero{padding-top:56px}
+  .badge{position:static; margin-top:10px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav" role="navigation" aria-label="Hauptnavigation">
+    <a class="brand" href="#" aria-label="Startseite">
+      <!--
+      <span class="logo" aria-hidden="true"></span><span>kontainer.sh</span>
+      -->
+      <img src="KONTAINERSH_Logo_horizontal_negativ_RGB.png" width="200">
+    </a>
+    <nav class="menu" aria-label="Primäre Navigation">
+      <a href="#tutorials">Tutorials</a>
+      <a href="#oss">Open Source</a>
+      <a href="#produkte">Produkte</a>
+      <a href="#newsletter">Newsletter</a>
+      <a class="btn-ghost" href="#kontakt">Kontakt</a>
+      <a class="btn" href="#tutorials">Tutorials entdecken</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <div class="wrap hero">
+    <div class="chip"><span class="ok">✓</span> Alle Beispiele werden in CI ausgeführt &amp; getestet</div>
+    <h1>DevOps Knowledge –<br> immer getestet, immer aktuell.</h1>
+    <p>Tutorials, Templates &amp; Tools für moderne Infrastruktur. CI/CD, Kubernetes &amp; IaC – mit automatisierten Tests, Badges und Update-Pipelines.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#tutorials">Tutorials entdecken</a>
+      <a class="btn-ghost" href="#starter">Starter-Kit herunterladen</a>
+    </div>
+  </div>
+
+  <!-- USP -->
+  <section class="wrap" aria-labelledby="usp">
+    <div class="grid">
+      <article class="card k" aria-labelledby="usp1">
+        <div class="pill">CI/CD</div>
+        <h3 id="usp1">CI/CD Pipelines</h3>
+        <p class="muted">GitHub Actions, GitLab CI &amp; ArgoCD – praxiserprobte Workflows.</p>
+      </article>
+      <article class="card k" aria-labelledby="usp2">
+        <div class="pill">Kubernetes</div>
+        <h3 id="usp2">Kubernetes Deployments</h3>
+        <p class="muted">Docker → Helm → K8s. Reproduzierbar &amp; skalierbar.</p>
+      </article>
+      <article class="card k" aria-labelledby="usp3">
+        <div class="pill">IaC</div>
+        <h3 id="usp3">IaC Templates</h3>
+        <p class="muted">Terraform/Pulumi-Bausteine für Startups &amp; KMU.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Tutorials -->
+  <section id="tutorials" class="wrap" aria-labelledby="tut">
+    <h2 id="tut">Neueste Tutorials</h2>
+    <div class="grid" style="margin-top:8px">
+      <article class="card k">
+        <h3>CI/CD mit GitHub Actions</h3>
+        <p class="muted">Workflows, Secrets, Environments &amp; Deployment-Strategien.</p>
+        <div class="badge">✅ Tested on GHA v4</div>
+      </article>
+      <article class="card k">
+        <h3>Kubernetes in 15 Minuten</h3>
+        <p class="muted">Lokales Cluster mit kind, Deployment &amp; Service.</p>
+        <div class="badge">✅ Tested on K8s v1.31</div>
+      </article>
+      <article class="card k">
+        <h3>Terraform AWS Starter</h3>
+        <p class="muted">Modulare Struktur, Provider, Remote State &amp; Workspaces.</p>
+        <div class="badge">✅ Tested on TF v1.9</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- OSS + Produkte zweispaltig -->
+  <section class="wrap">
+    <div class="grid">
+      <div id="oss" class="k8">
+        <h2>Open Source Projekte</h2>
+        <div class="grid" style="grid-template-columns:1fr; gap:14px; margin-top:8px">
+          <a class="card repo" href="#" aria-label="terraform-aws-starter Repo">
+            <div>
+              <strong>kontainer-sh/terraform-aws-starter</strong>
+              <span class="muted">Terraform-Vorlage mit Beispielen und CI.</span>
+            </div>
+            <div class="star">⭐ 112</div>
+          </a>
+          <a class="card repo" href="#" aria-label="k8s-helm-deployments Repo">
+            <div>
+              <strong>kontainer-sh/k8s-helm-deployments</strong>
+              <span class="muted">Helm Charts &amp; Best Practices für App-Deployments.</span>
+            </div>
+            <div class="star">⭐ 89</div>
+          </a>
+        </div>
+      </div>
+
+      <aside id="produkte" class="k4" aria-labelledby="prod">
+        <h2 id="prod">Produkte</h2>
+        <div class="grid" style="grid-template-columns:1fr; gap:14px; margin-top:8px">
+          <a class="card" href="#">
+            <strong>Terraform Starter Kit</strong>
+            <p class="muted">AWS-Module, Remote State, Pipelines.</p>
+            <div class="price">29 €</div>
+          </a>
+          <a class="card" href="#">
+            <strong>CI/CD Setup – Fixpreis</strong>
+            <p class="muted">In 2 Wochen produktionsreif. GitHub Actions/ArgoCD.</p>
+            <div class="price">2.500 €</div>
+          </a>
+          <a class="card" href="#">
+            <strong>E-Book „CI/CD Basics“</strong>
+            <p class="muted">Der kompakte Einstieg inkl. Checklisten.</p>
+            <div class="price">19 €</div>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Newsletter-Bar -->
+  <section id="newsletter" class="wrap news-wrap" aria-labelledby="nl">
+    <div class="newsbar">
+      <h3 id="nl">Bleib auf dem Laufenden</h3>
+      <p class="muted">Wöchentliche DevOps-Updates – getestet &amp; kompakt.</p>
+      <form class="form" onsubmit="event.preventDefault(); alert('Danke! (Demo)');">
+        <label class="sr-only" for="mail">E-Mail</label>
+        <input class="input" id="mail" type="email" placeholder="deine@adresse.dev" required>
+        <button class="btn" type="submit">Jetzt abonnieren</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="y"></span> kontainer.sh</div>
+    <div class="links">
+      <a href="#">Impressum</a> ·
+      <a href="#">Datenschutz</a> ·
+      <a href="https://github.com/kontainer-sh" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
