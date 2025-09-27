@@ -3,26 +3,165 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>kontainer.sh</title>
+    <title>kontainer.sh – DevOps Knowledge</title>
+    <meta
+      name="description"
+      content="Tutorials, Templates &amp; Tools für moderne Infrastruktur – CI/CD, Kubernetes &amp; IaC – immer getestet, immer aktuell."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Titillium+Web:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container">
-      <header class="hero">
-        <h1>kontainer.sh</h1>
-        <p>Ein frischer Start für alles rund um Container, Cloud und moderne Infrastruktur.</p>
-      </header>
-      <section class="content">
+    <header>
+      <div class="wrap nav" role="navigation" aria-label="Hauptnavigation">
+        <a class="brand" href="#" aria-label="Startseite">
+          <span class="logo" aria-hidden="true"></span>
+          <span>kontainer.sh</span>
+        </a>
+        <nav class="menu" aria-label="Primäre Navigation">
+          <a href="#tutorials">Tutorials</a>
+          <a href="#oss">Open Source</a>
+          <a href="#produkte">Produkte</a>
+          <a href="#newsletter">Newsletter</a>
+          <a class="btn-ghost" href="#kontakt">Kontakt</a>
+          <a class="btn" href="#tutorials">Tutorials entdecken</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="wrap hero">
+        <div class="chip"><span class="ok">✓</span> Alle Beispiele werden in CI ausgeführt &amp; getestet</div>
+        <h1>DevOps Knowledge –<br />immer getestet, immer aktuell.</h1>
         <p>
-          Diese statische Seite ist der Ausgangspunkt für kommende Inhalte. Schau bald wieder
-          vorbei, um mehr über unsere Projekte, Workshops und Ressourcen zu erfahren.
+          Tutorials, Templates &amp; Tools für moderne Infrastruktur. CI/CD, Kubernetes &amp; IaC – mit automatisierten Tests,
+          Badges und Update-Pipelines.
         </p>
-        <a class="cta" href="mailto:hallo@kontainer.sh">Kontakt aufnehmen</a>
+        <div class="hero-actions">
+          <a class="btn" href="#tutorials">Tutorials entdecken</a>
+          <a class="btn-ghost" href="#starter">Starter-Kit herunterladen</a>
+        </div>
+      </section>
+
+      <section class="wrap" aria-labelledby="usp">
+        <div class="grid">
+          <article class="card k" aria-labelledby="usp1">
+            <div class="pill">CI/CD</div>
+            <h3 id="usp1">CI/CD Pipelines</h3>
+            <p class="muted">GitHub Actions, GitLab CI &amp; ArgoCD – praxiserprobte Workflows.</p>
+          </article>
+          <article class="card k" aria-labelledby="usp2">
+            <div class="pill">Kubernetes</div>
+            <h3 id="usp2">Kubernetes Deployments</h3>
+            <p class="muted">Docker → Helm → K8s. Reproduzierbar &amp; skalierbar.</p>
+          </article>
+          <article class="card k" aria-labelledby="usp3">
+            <div class="pill">IaC</div>
+            <h3 id="usp3">IaC Templates</h3>
+            <p class="muted">Terraform/Pulumi-Bausteine für Startups &amp; KMU.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tutorials" class="wrap" aria-labelledby="tut">
+        <h2 id="tut">Neueste Tutorials</h2>
+        <div class="grid tutorials-grid">
+          <article class="card k">
+            <h3>CI/CD mit GitHub Actions</h3>
+            <p class="muted">Workflows, Secrets, Environments &amp; Deployment-Strategien.</p>
+            <div class="badge">✅ Tested on GHA v4</div>
+          </article>
+          <article class="card k">
+            <h3>Kubernetes in 15 Minuten</h3>
+            <p class="muted">Lokales Cluster mit kind, Deployment &amp; Service.</p>
+            <div class="badge">✅ Tested on K8s v1.31</div>
+          </article>
+          <article class="card k">
+            <h3>Terraform AWS Starter</h3>
+            <p class="muted">Modulare Struktur, Provider, Remote State &amp; Workspaces.</p>
+            <div class="badge">✅ Tested on TF v1.9</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="grid">
+          <div id="oss" class="k8">
+            <h2>Open Source Projekte</h2>
+            <div class="grid single-column-grid">
+              <a class="card repo" href="#" aria-label="terraform-aws-starter Repo">
+                <div>
+                  <strong>kontainer-sh/terraform-aws-starter</strong>
+                  <span class="muted">Terraform-Vorlage mit Beispielen und CI.</span>
+                </div>
+                <div class="star">⭐ 112</div>
+              </a>
+              <a class="card repo" href="#" aria-label="k8s-helm-deployments Repo">
+                <div>
+                  <strong>kontainer-sh/k8s-helm-deployments</strong>
+                  <span class="muted">Helm Charts &amp; Best Practices für App-Deployments.</span>
+                </div>
+                <div class="star">⭐ 89</div>
+              </a>
+            </div>
+          </div>
+
+          <aside id="produkte" class="k4" aria-labelledby="prod">
+            <h2 id="prod">Produkte</h2>
+            <div class="grid single-column-grid">
+              <a class="card" href="#">
+                <strong>Terraform Starter Kit</strong>
+                <p class="muted">AWS-Module, Remote State, Pipelines.</p>
+                <div class="price">29 €</div>
+              </a>
+              <a class="card" href="#">
+                <strong>CI/CD Setup – Fixpreis</strong>
+                <p class="muted">In 2 Wochen produktionsreif. GitHub Actions/ArgoCD.</p>
+                <div class="price">2.500 €</div>
+              </a>
+              <a class="card" href="#">
+                <strong>E-Book „CI/CD Basics“</strong>
+                <p class="muted">Der kompakte Einstieg inkl. Checklisten.</p>
+                <div class="price">19 €</div>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="newsletter" class="wrap news-wrap" aria-labelledby="nl">
+        <div class="newsbar">
+          <h3 id="nl">Bleib auf dem Laufenden</h3>
+          <p class="muted">Wöchentliche DevOps-Updates – getestet &amp; kompakt.</p>
+          <form class="form" onsubmit="event.preventDefault(); alert('Danke! (Demo)');">
+            <label class="sr-only" for="mail">E-Mail</label>
+            <input class="input" id="mail" type="email" placeholder="deine@adresse.dev" required />
+            <button class="btn" type="submit">Jetzt abonnieren</button>
+          </form>
+        </div>
       </section>
     </main>
-    <footer class="footer">
-      <p>&copy; <span id="year"></span> kontainer.sh &ndash; Alle Rechte vorbehalten.</p>
+
+    <footer>
+      <div class="wrap foot">
+        <div>© <span id="year"></span> kontainer.sh</div>
+        <div class="links">
+          <a href="#">Impressum</a>
+          <span aria-hidden="true">·</span>
+          <a href="#">Datenschutz</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/kontainer-sh" target="_blank" rel="noopener">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
     </footer>
+
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
