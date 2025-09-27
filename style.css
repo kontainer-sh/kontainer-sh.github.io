@@ -230,11 +230,14 @@ header {
   font-size: 18px;
 }
 
+/*
+  Komponenten für Hero-Call-to-Actions folgen, sobald entsprechende Links wieder aktiv sind.
 .hero-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
+*/
 
 section {
   padding: 24px 0;
@@ -277,6 +280,8 @@ section {
   grid-column: span 12;
 }
 
+/*
+  Komponenten für Tutorials werden bei Bedarf wieder aktiviert.
 .tutorials-grid {
   margin-top: 8px;
 }
@@ -286,6 +291,8 @@ section {
   gap: 14px;
   margin-top: 8px;
 }
+
+*/
 
 .pill {
   display: inline-flex;
@@ -301,6 +308,8 @@ section {
   margin-bottom: 10px;
 }
 
+/*
+  Komponenten für Produktlisten und Newsletter werden bei Bedarf wieder aktiviert.
 .badge {
   position: absolute;
   left: 16px;
@@ -378,6 +387,7 @@ section {
 .input::placeholder {
   color: #7e96b8;
 }
+*/
 
 footer {
   padding: 26px 0 48px;
@@ -408,6 +418,31 @@ footer {
 
 .links a:hover {
   color: #fff;
+}
+
+.legal {
+  padding: 40px 0;
+}
+
+.legal h2 {
+  margin-bottom: 18px;
+}
+
+.legal p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.legal strong {
+  color: #fff;
+}
+
+.legal a {
+  color: var(--accent);
+}
+
+.legal a:hover {
+  text-decoration: underline;
 }
 
 .sr-only {
