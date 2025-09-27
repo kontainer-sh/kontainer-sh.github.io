@@ -12,18 +12,14 @@
   </head>
   <body>
     <header>
-      <div class="wrap nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="wrap nav">
         <a class="brand" href="#" aria-label="Startseite">
           <img class="logo" src="KONTAINERSH_Logo_horizontal_negativ_RGB.png" alt="kontainer.sh" />
         </a>
-        <nav class="menu" aria-label="Primäre Navigation">
-          <a href="#tutorials">Tutorials</a>
-          <a href="#oss">Open Source</a>
-          <a href="#produkte">Produkte</a>
-          <a href="#newsletter">Newsletter</a>
-          <a class="btn-ghost" href="#kontakt">Kontakt</a>
-          <a class="btn" href="#tutorials">Tutorials entdecken</a>
-        </nav>
+        <!--
+          Navigation und Call-to-Actions werden reaktiviert, sobald die zugehörigen Inhalte
+          wieder eingebunden werden.
+        -->
       </div>
     </header>
 
@@ -35,10 +31,7 @@
           Tutorials, Templates &amp; Tools für moderne Infrastruktur. CI/CD, Kubernetes &amp; IaC – mit automatisierten Tests,
           Badges und Update-Pipelines.
         </p>
-        <div class="hero-actions">
-          <a class="btn" href="#tutorials">Tutorials entdecken</a>
-          <a class="btn-ghost" href="#starter">Starter-Kit herunterladen</a>
-        </div>
+        <!-- Hero-Aktions-Buttons folgen, sobald entsprechende Inhalte bereitstehen. -->
       </section>
 
       <section class="wrap" aria-labelledby="usp">
@@ -46,7 +39,7 @@
           <article class="card k" aria-labelledby="usp1">
             <div class="pill">CI/CD</div>
             <h3 id="usp1">CI/CD Pipelines</h3>
-            <p class="muted">GitHub Actions, GitLab CI &amp; ArgoCD – praxiserprobte Workflows.</p>
+            <p class="muted">GitHub Actions, GitLab CI &amp; Flux CD – praxiserprobte Workflows.</p>
           </article>
           <article class="card k" aria-labelledby="usp2">
             <div class="pill">Kubernetes</div>
@@ -56,101 +49,32 @@
           <article class="card k" aria-labelledby="usp3">
             <div class="pill">IaC</div>
             <h3 id="usp3">IaC Templates</h3>
-            <p class="muted">Terraform/Pulumi-Bausteine für Startups &amp; KMU.</p>
+            <p class="muted">Terraform-Bausteine für Startups &amp; KMU.</p>
           </article>
         </div>
       </section>
 
-      <section id="tutorials" class="wrap" aria-labelledby="tut">
-        <h2 id="tut">Neueste Tutorials</h2>
-        <div class="grid tutorials-grid">
-          <article class="card k">
-            <h3>CI/CD mit GitHub Actions</h3>
-            <p class="muted">Workflows, Secrets, Environments &amp; Deployment-Strategien.</p>
-            <div class="badge">✅ Tested on GHA v4</div>
-          </article>
-          <article class="card k">
-            <h3>Kubernetes in 15 Minuten</h3>
-            <p class="muted">Lokales Cluster mit kind, Deployment &amp; Service.</p>
-            <div class="badge">✅ Tested on K8s v1.31</div>
-          </article>
-          <article class="card k">
-            <h3>Terraform AWS Starter</h3>
-            <p class="muted">Modulare Struktur, Provider, Remote State &amp; Workspaces.</p>
-            <div class="badge">✅ Tested on TF v1.9</div>
-          </article>
-        </div>
-      </section>
+      <!--
+        Sobald Inhalte bereitstehen, werden die folgenden Abschnitte wieder aktiviert:
 
-      <section class="wrap">
-        <div class="grid">
-          <div id="oss" class="k8">
-            <h2>Open Source Projekte</h2>
-            <div class="grid single-column-grid">
-              <a class="card repo" href="#" aria-label="terraform-aws-starter Repo">
-                <div>
-                  <strong>kontainer-sh/terraform-aws-starter</strong>
-                  <span class="muted">Terraform-Vorlage mit Beispielen und CI.</span>
-                </div>
-                <div class="star">⭐ 112</div>
-              </a>
-              <a class="card repo" href="#" aria-label="k8s-helm-deployments Repo">
-                <div>
-                  <strong>kontainer-sh/k8s-helm-deployments</strong>
-                  <span class="muted">Helm Charts &amp; Best Practices für App-Deployments.</span>
-                </div>
-                <div class="star">⭐ 89</div>
-              </a>
-            </div>
-          </div>
+        <section id="tutorials" class="wrap" aria-labelledby="tut">…</section>
+        <section class="wrap">…</section>
+        <section id="newsletter" class="wrap news-wrap" aria-labelledby="nl">…</section>
+      -->
 
-          <aside id="produkte" class="k4" aria-labelledby="prod">
-            <h2 id="prod">Produkte</h2>
-            <div class="grid single-column-grid">
-              <a class="card" href="#">
-                <strong>Terraform Starter Kit</strong>
-                <p class="muted">AWS-Module, Remote State, Pipelines.</p>
-                <div class="price">29 €</div>
-              </a>
-              <a class="card" href="#">
-                <strong>CI/CD Setup – Fixpreis</strong>
-                <p class="muted">In 2 Wochen produktionsreif. GitHub Actions/ArgoCD.</p>
-                <div class="price">2.500 €</div>
-              </a>
-              <a class="card" href="#">
-                <strong>E-Book „CI/CD Basics“</strong>
-                <p class="muted">Der kompakte Einstieg inkl. Checklisten.</p>
-                <div class="price">19 €</div>
-              </a>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section id="newsletter" class="wrap news-wrap" aria-labelledby="nl">
-        <div class="newsbar">
-          <h3 id="nl">Bleib auf dem Laufenden</h3>
-          <p class="muted">Wöchentliche DevOps-Updates – getestet &amp; kompakt.</p>
-          <form class="form" onsubmit="event.preventDefault(); alert('Danke! (Demo)');">
-            <label class="sr-only" for="mail">E-Mail</label>
-            <input class="input" id="mail" type="email" placeholder="deine@adresse.dev" required />
-            <button class="btn" type="submit">Jetzt abonnieren</button>
-          </form>
-        </div>
-      </section>
     </main>
 
     <footer>
       <div class="wrap foot">
         <div>© <span id="year"></span> kontainer.sh</div>
         <div class="links">
-          <a href="#">Impressum</a>
+          <a href="impressum.html">Impressum</a>
           <span aria-hidden="true">·</span>
-          <a href="#">Datenschutz</a>
+          <a href="datenschutz.html">Datenschutz</a>
           <span aria-hidden="true">·</span>
-          <a href="https://github.com/kontainer-sh" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/kontainer-sh" target="_blank" rel="noopener noreferrer">GitHub</a>
           <span aria-hidden="true">·</span>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/hzimpel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </footer>
