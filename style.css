@@ -410,6 +410,31 @@ footer {
   color: #fff;
 }
 
+.legal {
+  padding: 40px 0;
+}
+
+.legal h2 {
+  margin-bottom: 18px;
+}
+
+.legal p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.legal strong {
+  color: #fff;
+}
+
+.legal a {
+  color: var(--accent);
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
