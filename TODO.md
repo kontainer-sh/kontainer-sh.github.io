@@ -20,6 +20,6 @@
 
 ## Priorität 4: Code-Qualität
 
-- [ ] **CSS aufräumen** – Ungenutzte Variablen entfernen, Media-Queries konsolidieren
-- [ ] **Font-Loading optimieren** – `font-display: swap` sicherstellen
-- [ ] **Screenshot-Tool absichern** – .gitignore für current.png ist gesetzt, node_modules ebenfalls
+- [x] **CSS aufräumen** – Ungenutzte Variablen (gray-100, gray-800) entfernt, Media-Queries sauber
+- [x] **Font-Loading optimieren** – display=swap + preconnect bereits korrekt
+- [x] **Screenshot-Tool absichern** – .gitignore für current.png und node_modules bestätigt
