@@ -194,7 +194,10 @@
     <div class="container cta-inner">
         <h2>Lassen Sie uns Ihr Projekt gemeinsam anschauen.</h2>
         <p class="cta-sub">Ein klarer Blick von außen spart Zeit, Geld und Nerven.</p>
-        <form class="contact-form" action="{{ .Site.Params.formspreeEndpoint }}" method="POST">
+        <form class="contact-form"
+              {{ with .Site.Params.formspreeEndpoint }}action="{{ . }}" method="POST"
+              {{ else }}action="mailto:{{ $.Site.Params.email }}" method="POST" enctype="text/plain"
+              {{ end }}>
             <div>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required placeholder="Ihr Name">

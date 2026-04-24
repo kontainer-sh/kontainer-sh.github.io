@@ -2,9 +2,9 @@
 
 ## BLOCKER (verhindert Go-Live)
 
-- [ ] **Kontaktformular Platzhalter** – `formspreeEndpoint` in hugo.toml ist `placeholder`. Formular-Submits schlagen fehl. Echte Formspree-ID eintragen oder Alternative (z.B. Netlify Forms, mailto-Fallback).
-- [ ] **Blog-Link führt zu 404** – Nav verlinkt auf `/blog/`, Seite existiert nicht. Link entfernen oder Platzhalter-Seite erstellen.
-- [ ] **robots.txt fehlt** – Suchmaschinen finden keine Crawling-Anweisungen. `static/robots.txt` erstellen mit Sitemap-Verweis und Disallow für /categories/, /tags/.
+- [x] **Kontaktformular** – mailto-Fallback aktiv (info@kontainer.sh). Formspree-ID in hugo.toml einkommentieren wenn vorhanden.
+- [x] **Blog-Link** – Aus Navigation entfernt (Template auskommentiert, reaktivierbar).
+- [x] **robots.txt** – Erstellt mit Sitemap-Verweis, Disallow für /categories/ und /tags/.
 
 ## WICHTIG (vor Go-Live fixen)
 

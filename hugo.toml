@@ -6,7 +6,7 @@ theme = "kontainersh"
 
 [params]
   description = "Verstehen Sie in 48h, wie gut Ihr Softwareprojekt wirklich ist. KI-gestützter Health Check für Code, Architektur und Prozesse."
-  formspreeEndpoint = "https://formspree.io/f/placeholder"
+  # formspreeEndpoint = "https://formspree.io/f/DEINE_ID"  # Einkommentieren wenn Formspree-ID vorhanden
   email = "info@kontainer.sh"
   githubURL = "https://github.com/kontainer-sh"
   linkedinURL = "https://www.linkedin.com/in/hzimpel/"
