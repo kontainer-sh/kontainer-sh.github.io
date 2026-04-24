@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kontainer.sh – AI Project Health Check</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #00D26A;
+            --green-light: #00E87B;
+            --dark: #0B1120;
+            --dark-card: #111827;
+            --dark-border: #1E293B;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1E293B;
+            --gray-900: #0F172A;
+            --white: #FFFFFF;
+            --teal: #2DD4BF;
+            --orange: #F59E0B;
+            --purple: #8B5CF6;
+            --red: #EF4444;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-900);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===================== HEADER ===================== */
+        header {
+            background: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .logo .dot {
+            color: var(--green);
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+            margin-right: 8px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        .btn-contact {
+            border: 1px solid var(--green);
+            color: var(--green);
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-contact:hover {
+            background: var(--green);
+            color: var(--dark);
+        }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            background: var(--dark);
+            padding: 80px 0 96px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 210, 106, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 210, 106, 0.1);
+            border: 1px solid rgba(0, 210, 106, 0.2);
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+
+        .hero-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: var(--gray-400);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .hero-checks {
+            list-style: none;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .hero-checks li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--gray-300);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .hero-checks li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: var(--green);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green);
+            color: var(--dark);
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--green-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0, 210, 106, 0.3);
+        }
+
+        .btn-primary svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero-social-proof {
+            margin-top: 20px;
+            color: var(--gray-500);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-social-proof svg {
+            color: var(--green);
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Ring Chart */
+        .ring-chart-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .ring-chart {
+            position: relative;
+            width: 380px;
+            height: 380px;
+        }
+
+        .ring-chart svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .ring-chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .ring-chart-center .label {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .ring-chart-center .title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.3;
+        }
+
+        /* ===================== LEISTUNGEN ===================== */
+        .leistungen {
+            padding: 96px 0;
+            background: var(--white);
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--green);
+            margin-bottom: 16px;
+        }
+
+        .leistungen-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 56px;
+        }
+
+        .leistungen h2 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+        }
+
+        .leistungen-desc {
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.7;
+            padding-top: 36px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--green);
+            box-shadow: 0 4px 12px rgba(0, 210, 106, 0.08);
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--dark);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .feature-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--green);
+        }
+
+        .feature-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ===================== HEALTH REPORT PREVIEW ===================== */
+        .report-section {
+            padding: 0 0 96px;
+            background: var(--white);
+        }
+
+        .report-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .report-preview {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .report-preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .report-preview h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .report-badge {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--green);
+            background: rgba(0, 210, 106, 0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        .report-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .report-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+        }
+
+        .report-item-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .report-item-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .report-item-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .report-item-score {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .score-good { color: var(--green); }
+        .score-warn { color: var(--orange); }
+        .score-bad { color: var(--red); }
+
+        /* ===================== PROBLEM SECTION ===================== */
+        .problem-section {
+            padding: 96px 0;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        .problem-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .problem-list li .num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--dark);
+            color: var(--green);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .problem-right h2 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .problem-right p {
+            color: var(--gray-500);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        /* ===================== AI ANALYSE ===================== */
+        .ai-section {
+            padding: 96px 0;
+            background: var(--dark);
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .ai-icon-large {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 210, 106, 0.1);
+            border: 1px solid rgba(0, 210, 106, 0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ai-icon-large svg {
+            width: 40px;
+            height: 40px;
+            color: var(--green);
+        }
+
+        .ai-content h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .ai-content p {
+            color: var(--gray-400);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 640px;
+        }
+
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .ai-feature-card {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .ai-feature-card h4 {
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .ai-feature-card p {
+            color: var(--gray-400);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ===================== STATS ===================== */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .stats-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .stats-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--green);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        /* ===================== CTA ===================== */
+        .cta-section {
+            padding: 96px 0;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-inner p {
+            color: var(--gray-500);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--dark);
+            padding: 48px 0;
+            border-top: 1px solid var(--dark-border);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-copy {
+            color: var(--gray-500);
+            font-size: 13px;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero-grid,
+            .leistungen-header,
+            .report-grid,
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .ring-chart {
+                width: 300px;
+                height: 300px;
+            }
+            .features-grid,
+            .ai-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 48px 0 64px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            nav {
+                display: none;
+            }
+            .features-grid,
+            .ai-features {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .ai-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 28 28" fill="none">
+                <rect x="2" y="6" width="24" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                <rect x="6" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.8"/>
+                <rect x="15" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.4"/>
+            </svg>
+            kontainer<span class="dot">.sh</span>
+        </a>
+        <nav>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#vorgehen">Vorgehen</a>
+            <a href="#referenzen">Referenzen</a>
+            <a href="#blog">Blog</a>
+            <a href="#preise">Preise</a>
+            <a href="#kontakt" class="btn-contact">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <div class="hero-badge">
+                <svg viewBox="0 0 14 14" fill="none">
+                    <path d="M7 1L8.5 5.5L13 7L8.5 8.5L7 13L5.5 8.5L1 7L5.5 5.5L7 1Z" fill="currentColor"/>
+                </svg>
+                KI-gestützte Code &amp; Projektanalyse
+            </div>
+            <h1>Verstehen Sie in 48h, wie gut Ihr Softwareprojekt wirklich ist.</h1>
+            <p class="hero-subtitle">Unser AI-gestützter Health Check analysiert Ihren Code, Ihre Architektur und Prozesse – und liefert Ihnen einen klaren, priorisierten Maßnahmenplan.</p>
+            <ul class="hero-checks">
+                <li>
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Unabhängige Bewertung von Code, Architektur und Prozessen
+                </li>
+                <li>
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Risiken und Schwachstellen frühzeitig erkennen
+                </li>
+                <li>
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Wissen, wo Ihr Tech Stack wirklich steht
+                </li>
+                <li>
+                    <svg viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Klare Handlungsempfehlungen statt Bauchgefühl
+                </li>
+            </ul>
+            <a href="#kontakt" class="btn-primary">
+                Jetzt Health Check anfragen
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3.333 8H12.667M12.667 8L8 3.333M12.667 8L8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="hero-social-proof">
+                <svg viewBox="0 0 14 14" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Bereits von über 100 Unternehmen genutzt &middot; Ergebnis in 48 Stunden
+            </div>
+        </div>
+        <div class="ring-chart-wrapper">
+            <div class="ring-chart">
+                <svg viewBox="0 0 200 200">
+                    <!-- Background ring -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#1E293B" stroke-width="18"/>
+                    <!-- Green segment: Code Quality (35%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#00D26A" stroke-width="18"
+                        stroke-dasharray="176 503" stroke-dashoffset="0" stroke-linecap="round"/>
+                    <!-- Teal segment: Architecture (25%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2DD4BF" stroke-width="18"
+                        stroke-dasharray="126 503" stroke-dashoffset="-176" stroke-linecap="round"/>
+                    <!-- Orange segment: Security (20%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#F59E0B" stroke-width="18"
+                        stroke-dasharray="100 503" stroke-dashoffset="-302" stroke-linecap="round"/>
+                    <!-- Purple segment: Performance (15%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#8B5CF6" stroke-width="18"
+                        stroke-dasharray="75 503" stroke-dashoffset="-402" stroke-linecap="round"/>
+                    <!-- Outer decorative ring -->
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="#1E293B" stroke-width="1"/>
+                    <!-- Inner decorative ring -->
+                    <circle cx="100" cy="100" r="65" fill="none" stroke="#1E293B" stroke-width="1"/>
+                </svg>
+                <div class="ring-chart-center">
+                    <div class="label">AI</div>
+                    <div class="title">Project<br>Intelligence</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== LEISTUNGEN ==================== -->
+<section class="leistungen" id="leistungen">
+    <div class="container">
+        <div class="leistungen-header">
+            <div>
+                <span class="section-label">Leistungen</span>
+                <h2>AI Project Health Check</h2>
+            </div>
+            <p class="leistungen-desc">In wenigen Tagen erhalten Sie eine klare Einschätzung Ihrer Projekte. Unsere KI-Plattform analysiert systematisch Handlungsbedarfe und Optimierungspotenziale.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 22 22" fill="none"><path d="M4 7h14M4 11h14M4 15h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Analyse von Code-Struktur</h3>
+                <p>Automatisierte Bewertung von Code-Qualität, Komplexität und Wartbarkeit Ihrer gesamten Codebasis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 22 22" fill="none"><path d="M11 7v4l3 2M19 11a8 8 0 11-16 0 8 8 0 0116 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Identifikation von Risiken</h3>
+                <p>Frühzeitige Erkennung von technischen Schulden, Abhängigkeiten und potenziellen Ausfallrisiken.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 22 22" fill="none"><path d="M3 17l4-4 4 4 4-8 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Top 10 Prioritäten</h3>
+                <p>Priorisierte Handlungsempfehlungen basierend auf Business Impact und technischem Aufwand.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 22 22" fill="none"><path d="M4 4h6v6H4zM12 4h6v6h-6zM4 12h6v6H4zM12 12h6v6h-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Architektur-Review</h3>
+                <p>Bewertung der Systemarchitektur hinsichtlich Skalierbarkeit, Modularität und Best Practices.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 22 22" fill="none"><path d="M11 3v18M3 11h18M6 6l10 10M16 6L6 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Performance &amp; Skalierbarkeit</h3>
+                <p>Analyse von Engpässen, Ladezeiten und Skalierungspotenzial unter realistischen Lastszenarien.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 22 22" fill="none"><path d="M11 1l2.5 5.5L19 8l-4 4 1 5.5L11 15l-5 2.5 1-5.5-4-4 5.5-1.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Security-Analyse</h3>
+                <p>Überprüfung auf bekannte Sicherheitslücken, unsichere Konfigurationen und Compliance-Anforderungen.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== REPORT PREVIEW ==================== -->
+<section class="report-section" id="vorgehen">
+    <div class="container report-grid">
+        <div>
+            <span class="section-label">Ergebnis</span>
+            <h2 style="font-size:32px;font-weight:800;margin-bottom:16px;letter-spacing:-0.02em;">AI Project Health Report</h2>
+            <p style="color:var(--gray-500);font-size:15px;line-height:1.7;margin-bottom:24px;">Nach der Analyse erhalten Sie einen umfassenden Report mit konkreten Handlungsempfehlungen, priorisierten Maßnahmen und einer klaren Roadmap für Ihr Projekt.</p>
+            <ul class="problem-list">
+                <li>
+                    <span class="num">1</span>
+                    Übersichtliches Dashboard mit allen wichtigen Kennzahlen
+                </li>
+                <li>
+                    <span class="num">2</span>
+                    Detaillierte Analyse jeder Komponente mit Bewertung
+                </li>
+                <li>
+                    <span class="num">3</span>
+                    Priorisierte Handlungsempfehlungen mit Aufwandsschätzung
+                </li>
+                <li>
+                    <span class="num">4</span>
+                    Persönliches Walkthrough-Gespräch mit unseren Experten
+                </li>
+            </ul>
+        </div>
+        <div class="report-preview">
+            <div class="report-preview-header">
+                <h3>Projektübersicht</h3>
+                <span class="report-badge">Live Report</span>
+            </div>
+            <div class="report-items">
+                <div class="report-item">
+                    <div class="report-item-left">
+                        <div class="report-item-dot" style="background:var(--green)"></div>
+                        <span class="report-item-label">Code-Qualität</span>
+                    </div>
+                    <span class="report-item-score score-good">87/100</span>
+                </div>
+                <div class="report-item">
+                    <div class="report-item-left">
+                        <div class="report-item-dot" style="background:var(--teal)"></div>
+                        <span class="report-item-label">Architektur</span>
+                    </div>
+                    <span class="report-item-score score-good">72/100</span>
+                </div>
+                <div class="report-item">
+                    <div class="report-item-left">
+                        <div class="report-item-dot" style="background:var(--orange)"></div>
+                        <span class="report-item-label">Test-Abdeckung</span>
+                    </div>
+                    <span class="report-item-score score-warn">45/100</span>
+                </div>
+                <div class="report-item">
+                    <div class="report-item-left">
+                        <div class="report-item-dot" style="background:var(--purple)"></div>
+                        <span class="report-item-label">Security</span>
+                    </div>
+                    <span class="report-item-score score-warn">58/100</span>
+                </div>
+                <div class="report-item">
+                    <div class="report-item-left">
+                        <div class="report-item-dot" style="background:var(--red)"></div>
+                        <span class="report-item-label">Performance</span>
+                    </div>
+                    <span class="report-item-score score-bad">34/100</span>
+                </div>
+                <div class="report-item">
+                    <div class="report-item-left">
+                        <div class="report-item-dot" style="background:var(--green)"></div>
+                        <span class="report-item-label">Wartbarkeit</span>
+                    </div>
+                    <span class="report-item-score score-good">91/100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== DAS PROBLEM ==================== -->
+<section class="problem-section">
+    <div class="container problem-grid">
+        <div>
+            <span class="section-label">Herausforderung</span>
+            <ul class="problem-list">
+                <li>
+                    <span class="num">1</span>
+                    Teams, die auf Legacy-Code arbeiten, verlieren wertvolle Zeit mit Workarounds statt mit Weiterentwicklung.
+                </li>
+                <li>
+                    <span class="num">2</span>
+                    Technische Schulden wachsen unbemerkt und machen jede Änderung teurer und risikoreicher.
+                </li>
+                <li>
+                    <span class="num">3</span>
+                    Entscheider haben oft kein klares Bild vom tatsächlichen Zustand ihrer Software.
+                </li>
+                <li>
+                    <span class="num">4</span>
+                    Klassische Audits dauern Wochen, kosten viel und liefern oft generische Empfehlungen.
+                </li>
+            </ul>
+        </div>
+        <div class="problem-right">
+            <h2>Das Problem</h2>
+            <p>Software-Projekte werden zunehmend komplex. Ohne regelmäßige Analyse schleichen sich technische Schulden ein, Sicherheitslücken bleiben unentdeckt und die Architektur erodiert.</p>
+            <p>Klassische Beratungsansätze sind zeitaufwendig, subjektiv und liefern oft erst nach Wochen verwertbare Ergebnisse. In dieser Zeit verschärfen sich bestehende Probleme weiter.</p>
+            <p>Unser KI-gestützter Ansatz liefert Ihnen in 48 Stunden eine objektive, datenbasierte Analyse – schneller, günstiger und präziser als traditionelle Code-Audits.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== AI ANALYSE ==================== -->
+<section class="ai-section">
+    <div class="container">
+        <div class="ai-grid">
+            <div class="ai-icon-large">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="14" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M28 10l4-4M12 10L8 6M20 6V2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="ai-content">
+                <h2>AI-unterstützte Analyse statt klassischer Beratung</h2>
+                <p>Unsere KI-Plattform kombiniert statische Code-Analyse, Architektur-Bewertung und Security-Scans zu einem ganzheitlichen Health Check – automatisiert, objektiv und in einem Bruchteil der Zeit klassischer Beratungsansätze.</p>
+            </div>
+        </div>
+        <div class="ai-features">
+            <div class="ai-feature-card">
+                <h4>Automatisierte Analyse</h4>
+                <p>Unsere KI analysiert Ihren gesamten Code innerhalb von Stunden statt Wochen – systematisch und ohne blinde Flecken.</p>
+            </div>
+            <div class="ai-feature-card">
+                <h4>Objektive Bewertung</h4>
+                <p>Datenbasierte Ergebnisse statt subjektiver Meinungen. Reproduzierbar und vergleichbar über die Zeit.</p>
+            </div>
+            <div class="ai-feature-card">
+                <h4>Konkrete Maßnahmen</h4>
+                <p>Keine generischen Empfehlungen, sondern priorisierte, umsetzbare Handlungsschritte für Ihr Team.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<section class="stats-section" id="referenzen">
+    <div class="container">
+        <div class="stats-header">
+            <span class="section-label">Track Record</span>
+            <h2>Erfahrung aus komplexen Projekten</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Projekte analysiert</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">48h</div>
+                <div class="stat-label">Durchschnittliche Lieferzeit</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Jahre Erfahrung</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Kundenbewertung</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-section" id="kontakt">
+    <div class="container cta-inner">
+        <h2>Lassen Sie uns Ihr Projekt gemeinsam anschauen.</h2>
+        <p>Vereinbaren Sie ein unverbindliches Erstgespräch und erfahren Sie, wie ein AI Project Health Check Ihrem Team helfen kann.</p>
+        <a href="mailto:kontakt@kontainer.sh" class="btn-primary">
+            Gespräch vereinbaren
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3.333 8H12.667M12.667 8L8 3.333M12.667 8L8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+    <div class="container footer-inner">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 28 28" fill="none">
+                <rect x="2" y="6" width="24" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                <rect x="6" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.8"/>
+                <rect x="15" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.4"/>
+            </svg>
+            kontainer<span class="dot">.sh</span>
+        </a>
+        <div class="footer-links">
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">AGB</a>
+        </div>
+        <span class="footer-copy">&copy; 2026 kontainer.sh</span>
+    </div>
+</footer>
+
+</body>
+</html>
