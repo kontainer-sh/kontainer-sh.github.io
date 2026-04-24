@@ -125,6 +125,35 @@
             color: var(--dark);
         }
 
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .burger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 1px;
+            transition: all 0.3s;
+        }
+
+        .burger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .burger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         /* ===================== HERO ===================== */
         .hero {
             background: var(--dark);
@@ -449,6 +478,19 @@
             flex-shrink: 0;
         }
 
+        .report-card-subtitle {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        /* Color utility classes */
+        .bg-green { background: var(--green); }
+        .bg-teal { background: var(--teal); }
+        .bg-orange { background: var(--orange); }
+        .bg-purple { background: var(--purple); }
+        .bg-red { background: var(--red); }
+
         .report-metric-score {
             font-size: 13px;
             font-weight: 700;
@@ -731,6 +773,23 @@
             }
             nav {
                 display: none;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 32px;
+                z-index: 99;
+            }
+            nav.open {
+                display: flex;
+            }
+            .burger {
+                display: flex;
             }
             .features-compact {
                 grid-template-columns: 1fr;
@@ -765,6 +824,9 @@
             </svg>
             kontainer<span class="dot">.sh</span>
         </a>
+        <button class="burger" onclick="this.classList.toggle('open');document.querySelector('nav').classList.toggle('open')" aria-label="Menü">
+            <span></span><span></span><span></span>
+        </button>
         <nav>
             <a href="#leistungen">Leistungen</a>
             <a href="#vorgehen">Vorgehen</a>
@@ -818,21 +880,31 @@
         <div class="ring-chart-wrapper">
             <div class="ring-chart">
                 <svg viewBox="0 0 200 200">
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="#1E293B" stroke-width="18"/>
-                    <!-- Green segment (35%) with gap -->
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="#00D26A" stroke-width="18"
+                    <!-- Outer decorative ring with tick marks -->
+                    <circle cx="100" cy="100" r="96" fill="none" stroke="#1E293B" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="96" fill="none" stroke="#2a3a50" stroke-width="2"
+                        stroke-dasharray="2 10.1" stroke-dashoffset="0"/>
+                    <!-- Background ring -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#1E293B" stroke-width="20"/>
+                    <!-- Green segment (35%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#00D26A" stroke-width="20"
                         stroke-dasharray="168 335" stroke-dashoffset="0" stroke-linecap="round"/>
-                    <!-- Teal segment (25%) with gap -->
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2DD4BF" stroke-width="18"
+                    <!-- Teal segment (25%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2DD4BF" stroke-width="20"
                         stroke-dasharray="118 385" stroke-dashoffset="-176" stroke-linecap="round"/>
-                    <!-- Orange segment (20%) with gap -->
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="#F59E0B" stroke-width="18"
+                    <!-- Orange segment (20%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#F59E0B" stroke-width="20"
                         stroke-dasharray="92 411" stroke-dashoffset="-302" stroke-linecap="round"/>
-                    <!-- Purple segment (15%) with gap -->
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="#8B5CF6" stroke-width="18"
+                    <!-- Purple segment (15%) -->
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#8B5CF6" stroke-width="20"
                         stroke-dasharray="67 436" stroke-dashoffset="-402" stroke-linecap="round"/>
-                    <circle cx="100" cy="100" r="95" fill="none" stroke="#1E293B" stroke-width="1"/>
-                    <circle cx="100" cy="100" r="65" fill="none" stroke="#1E293B" stroke-width="1"/>
+                    <!-- Inner decorative ring -->
+                    <circle cx="100" cy="100" r="64" fill="none" stroke="#1E293B" stroke-width="1"/>
+                    <!-- Segment boundary dots -->
+                    <circle cx="100" cy="20" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
+                    <circle cx="66" cy="168" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
+                    <circle cx="170" cy="130" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
+                    <circle cx="165" cy="48" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
                 </svg>
                 <div class="ring-chart-center">
                     <div class="label">AI</div>
@@ -913,51 +985,51 @@
                     <h3>AI Project Health Report</h3>
                     <span class="report-card-badge">Live</span>
                 </div>
-                <p style="font-size:13px;color:var(--gray-500);margin-bottom:20px;">Fortlaufende Registrierung und Definition aller relevanten Projektmetriken.</p>
+                <p class="report-card-subtitle">Fortlaufende Registrierung und Definition aller relevanten Projektmetriken.</p>
                 <div class="report-metrics">
                     <div class="report-metric-row">
                         <div class="report-metric-header">
-                            <span class="report-metric-label"><span class="report-metric-dot" style="background:var(--green)"></span>Code-Qualität</span>
+                            <span class="report-metric-label"><span class="report-metric-dot bg-green"></span>Code-Qualität</span>
                             <span class="report-metric-score score-good">87/100</span>
                         </div>
                         <div class="report-metric-bar">
-                            <div class="report-metric-fill" style="width:87%;background:var(--green)"></div>
+                            <div class="report-metric-fill bg-green" style="width:87%"></div>
                         </div>
                     </div>
                     <div class="report-metric-row">
                         <div class="report-metric-header">
-                            <span class="report-metric-label"><span class="report-metric-dot" style="background:var(--teal)"></span>Architektur</span>
+                            <span class="report-metric-label"><span class="report-metric-dot bg-teal"></span>Architektur</span>
                             <span class="report-metric-score score-good">72/100</span>
                         </div>
                         <div class="report-metric-bar">
-                            <div class="report-metric-fill" style="width:72%;background:var(--teal)"></div>
+                            <div class="report-metric-fill bg-teal" style="width:72%"></div>
                         </div>
                     </div>
                     <div class="report-metric-row">
                         <div class="report-metric-header">
-                            <span class="report-metric-label"><span class="report-metric-dot" style="background:var(--orange)"></span>Test-Abdeckung</span>
+                            <span class="report-metric-label"><span class="report-metric-dot bg-orange"></span>Test-Abdeckung</span>
                             <span class="report-metric-score score-warn">45/100</span>
                         </div>
                         <div class="report-metric-bar">
-                            <div class="report-metric-fill" style="width:45%;background:var(--orange)"></div>
+                            <div class="report-metric-fill bg-orange" style="width:45%"></div>
                         </div>
                     </div>
                     <div class="report-metric-row">
                         <div class="report-metric-header">
-                            <span class="report-metric-label"><span class="report-metric-dot" style="background:var(--purple)"></span>Security</span>
+                            <span class="report-metric-label"><span class="report-metric-dot bg-purple"></span>Security</span>
                             <span class="report-metric-score score-warn">58/100</span>
                         </div>
                         <div class="report-metric-bar">
-                            <div class="report-metric-fill" style="width:58%;background:var(--purple)"></div>
+                            <div class="report-metric-fill bg-purple" style="width:58%"></div>
                         </div>
                     </div>
                     <div class="report-metric-row">
                         <div class="report-metric-header">
-                            <span class="report-metric-label"><span class="report-metric-dot" style="background:var(--red)"></span>Performance</span>
+                            <span class="report-metric-label"><span class="report-metric-dot bg-red"></span>Performance</span>
                             <span class="report-metric-score score-bad">34/100</span>
                         </div>
                         <div class="report-metric-bar">
-                            <div class="report-metric-fill" style="width:34%;background:var(--red)"></div>
+                            <div class="report-metric-fill bg-red" style="width:34%"></div>
                         </div>
                     </div>
                 </div>
@@ -972,19 +1044,19 @@
         <div>
             <ul class="problem-list">
                 <li>
-                    <span class="indicator" style="background:var(--green)"></span>
+                    <span class="indicator bg-green"></span>
                     Teams, die auf Legacy-Code arbeiten, verlieren wertvolle Zeit mit Workarounds statt mit Weiterentwicklung.
                 </li>
                 <li>
-                    <span class="indicator" style="background:var(--purple)"></span>
+                    <span class="indicator bg-purple"></span>
                     Technische Schulden wachsen unbemerkt und machen jede Änderung teurer und risikoreicher.
                 </li>
                 <li>
-                    <span class="indicator" style="background:var(--teal)"></span>
+                    <span class="indicator bg-teal"></span>
                     Entscheider haben oft kein klares Bild vom tatsächlichen Zustand ihrer Software.
                 </li>
                 <li>
-                    <span class="indicator" style="background:var(--orange)"></span>
+                    <span class="indicator bg-orange"></span>
                     Klassische Audits dauern Wochen, kosten viel und liefern oft generische Empfehlungen.
                 </li>
             </ul>
