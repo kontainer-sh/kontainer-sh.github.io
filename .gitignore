@@ -1,7 +1,18 @@
 node_modules/
-current.png
+current*.png
 .DS_Store
 public/
 resources/
 .hugo_build.lock
 .venv/
+
+# Dev-Tools (nur lokal)
+bbb37a11-eca4-4dab-86e8-c118f56af164.png
+Screenshot*.png
+mockup-texte*.md
+textabgleich.md
+ocr_extract.py
+package.json
+package-lock.json
+screenshot.mjs
+check.mjs
