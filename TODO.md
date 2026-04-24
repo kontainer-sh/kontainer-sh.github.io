@@ -1,25 +1,37 @@
 # TODO – kontainer.sh Homepage
 
-## Priorität 1: Visuelle Differenzen zum Mockup
+## Offen
 
-- [x] **Ring-Chart verfeinern** – Tick-Marks, dickere Segmente, Boundary-Dots
-- [x] **Inline-Styles entfernen** – Farb-Utility-Klassen (bg-green etc.), nur width bleibt inline
-- [x] **Mobile Hamburger-Menü** – Burger-Icon mit animiertem Toggle, Fullscreen-Overlay
+- [ ] **blog.html fehlt** – Im Nav verlinkt, Seite existiert nicht. Platzhalter oder Link entfernen.
+- [ ] **Kontaktformular Platzhalter** – Formspree-Action ist `placeholder`, Formular funktioniert nicht produktiv. Echte Formspree-ID oder Alternative nötig.
 
-## Priorität 2: Funktionalität
+## Erledigt
 
-- [x] **Fehlende Anker-Ziele** – #vorgehen auf AI-Sektion, Blog/Preise auf eigene Seiten
-- [x] **Kontaktformular** – Formular mit Name, E-Mail, Unternehmen, Nachricht (Formspree-ready)
-- [x] **Footer-Links** – Platzhalter-Seiten für Impressum, Datenschutz, AGB erstellt
+### Mockup-Umsetzung
+- [x] Ring-Chart mit 4 Prozess-Labels (ERFASSEN/BEWERTEN/EMPFEHLEN/VERSTEHEN)
+- [x] Kompletter Textrewrite nach OCR-Extraktion
+- [x] 3-Spalten Problem-Sektion (Für wen? / Das Problem / Unser Ergebnis)
+- [x] Beispiel-Report Card mit Top-Risiken und Top-Maßnahmen
+- [x] Kundenzitat + Technologie-Tags in Erfahrung-Sektion
+- [x] Trust-Indikatoren (Vertraulich, 48-72h, kein Produktionszugriff)
+- [x] Kontinuierliche Begleitung (optional) Subsection
 
-## Priorität 3: SEO & Meta
+### Brand Guide (CI/CD)
+- [x] Schrift: Titillium Web
+- [x] Farben: #54FFE3 (Neon-Türkis), #2B3040 (Dunkelblau)
+- [x] Logo: KONTAINER.SH PNG (horizontal negativ) auf allen Seiten
+- [x] Favicon: Brand-konform (.svg + .ico)
 
-- [x] **Meta-Tags** – Description, OG, Twitter-Card auf allen Seiten
-- [x] **Favicon** – SVG-Favicon aus Logo abgeleitet
-- [x] **Semantisches HTML prüfen** – aria-label auf allen Sections, aria-hidden auf 18 SVGs, nav role
+### Funktionalität
+- [x] Kontaktformular (Formspree-ready, Platzhalter-Action)
+- [x] Mobile Hamburger-Menü
+- [x] Anker-Links vollständig
+- [x] SEO Meta-Tags, OG, Twitter-Card
+- [x] Accessibility (aria-labels, aria-hidden)
 
-## Priorität 4: Code-Qualität
-
-- [x] **CSS aufräumen** – Ungenutzte Variablen (gray-100, gray-800) entfernt, Media-Queries sauber
-- [x] **Font-Loading optimieren** – display=swap + preconnect bereits korrekt
-- [x] **Screenshot-Tool absichern** – .gitignore für current.png und node_modules bestätigt
+### Firmendaten
+- [x] Impressum mit echten Daten (KONTAINER.SH GmbH, HRB 725522)
+- [x] Datenschutzerklärung DSGVO-konform
+- [x] Social-Media-Links (GitHub, LinkedIn) korrekt
+- [x] E-Mail: info@kontainer.sh
+- [x] AGB-Seite entfernt (nicht vorgesehen)

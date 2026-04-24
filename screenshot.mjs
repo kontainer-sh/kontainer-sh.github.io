@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const htmlPath = join(__dirname, 'index.html');
+const htmlPath = join(__dirname, 'public', 'index.html');
 const outputPath = join(__dirname, 'current.png');
 
 const browser = await puppeteer.launch({ headless: true });

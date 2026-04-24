@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }} – AI Project Health Check{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ .Description | default .Site.Params.description }}">
+{{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ else }}<meta name="robots" content="index, follow">{{ end }}
+{{ if .IsHome }}<link rel="canonical" href="{{ .Site.BaseURL }}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ .Site.Title }} – AI Project Health Check">
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta property="og:url" content="{{ .Site.BaseURL }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Site.Title }} – AI Project Health Check">
+<meta name="twitter:description" content="{{ .Site.Params.description }}">
+{{ end }}
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+<link rel="apple-touch-icon" href="{{ "images/apple-touch-icon.png" | relURL }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
