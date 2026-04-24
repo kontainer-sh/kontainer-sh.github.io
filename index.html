@@ -336,6 +336,32 @@
             line-height: 1.3;
         }
 
+        .ring-chart-labels {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .ring-label {
+            position: absolute;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray-400);
+            white-space: nowrap;
+        }
+
+        .ring-label .ring-label-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
         /* ===================== LEISTUNGEN ===================== */
         .leistungen {
             padding: 96px 0;
@@ -651,46 +677,32 @@
         }
 
         /* ===================== STATS ===================== */
-        .stats-section {
-            padding: 80px 0;
+        .erfahrung-section {
+            padding: 96px 0;
             background: var(--white);
             border-bottom: 1px solid var(--gray-200);
         }
 
-        .stats-header {
-            text-align: center;
-            margin-bottom: 56px;
+        .erfahrung-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
         }
 
-        .stats-header h2 {
+        .erfahrung-grid h2 {
             font-size: 32px;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--gray-900);
             letter-spacing: -0.02em;
+            margin-bottom: 20px;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--green);
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 14px;
+        .erfahrung-grid p {
+            font-size: 15px;
             color: var(--gray-500);
-            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 16px;
         }
 
         /* ===================== CTA ===================== */
@@ -806,7 +818,8 @@
             }
             .hero-grid,
             .leistungen-body,
-            .problem-grid {
+            .problem-grid,
+            .erfahrung-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -816,10 +829,6 @@
             }
             .ai-features {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
             }
         }
 
@@ -855,9 +864,6 @@
             }
             .ai-features {
                 grid-template-columns: 1fr;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
             }
             .ai-grid {
                 grid-template-columns: 1fr;
@@ -963,6 +969,12 @@
                 <div class="ring-chart-center">
                     <div class="label">AI</div>
                     <div class="title">Project<br>Intelligence</div>
+                </div>
+                <div class="ring-chart-labels">
+                    <span class="ring-label" style="top:8%;right:-10%"><span class="ring-label-dot" style="background:#54FFE3"></span>Code-Qualität</span>
+                    <span class="ring-label" style="bottom:8%;right:-5%"><span class="ring-label-dot" style="background:#2DD4BF"></span>Architektur</span>
+                    <span class="ring-label" style="bottom:2%;left:5%"><span class="ring-label-dot" style="background:#F59E0B"></span>Security</span>
+                    <span class="ring-label" style="top:15%;left:-5%"><span class="ring-label-dot" style="background:#8B5CF6"></span>Performance</span>
                 </div>
             </div>
         </div>
@@ -1157,28 +1169,19 @@
     </div>
 </section>
 
-<!-- ==================== STATS ==================== -->
-<section class="stats-section" id="referenzen" aria-label="Referenzen">
+<!-- ==================== ERFAHRUNG ==================== -->
+<section class="erfahrung-section" id="referenzen" aria-label="Referenzen">
     <div class="container">
-        <div class="stats-header">
-            <h2>Erfahrung aus komplexen Projekten</h2>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Projekte analysiert</div>
+        <div class="erfahrung-grid">
+            <div>
+                <span class="section-label">Referenzen</span>
+                <h2>Erfahrung aus komplexen Projekten</h2>
+                <p>Wir haben Softwareprojekte unterschiedlichster Größe und Technologie-Stacks analysiert – von gewachsenen Monolithen über Microservice-Architekturen bis hin zu Legacy-Systemen vor der Modernisierung.</p>
+                <p>Unsere Analysen helfen Entwicklungsteams und Entscheidern, fundierte Entscheidungen über die Zukunft ihrer Software zu treffen – datenbasiert statt aus dem Bauch heraus.</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">48h</div>
-                <div class="stat-label">Durchschnittliche Lieferzeit</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Jahre Erfahrung</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">4.9</div>
-                <div class="stat-label">Kundenbewertung</div>
+            <div>
+                <p>Dabei arbeiten wir branchenübergreifend mit Unternehmen zusammen, die ihre bestehende Software objektiv bewerten lassen möchten – sei es vor einer Migration, nach einer Übernahme oder als regelmäßiger Gesundheitscheck.</p>
+                <p>Jedes Projekt beginnt mit einer strukturierten Aufnahme und endet mit einem persönlichen Walkthrough der Ergebnisse und konkreten nächsten Schritten für Ihr Team.</p>
             </div>
         </div>
     </div>
