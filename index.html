@@ -22,9 +22,11 @@
     <meta name="twitter:description" content="Verstehen Sie in 48h, wie gut Ihr Softwareprojekt wirklich ist.">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -33,11 +35,11 @@
         }
 
         :root {
-            --green: #00D26A;
-            --green-light: #00E87B;
-            --dark: #0B1120;
-            --dark-card: #111827;
-            --dark-border: #1E293B;
+            --green: #54FFE3;
+            --green-light: #7AFFF0;
+            --dark: #2B3040;
+            --dark-card: #343B4D;
+            --dark-border: #3D4556;
             --gray-50: #F8FAFC;
             --gray-200: #E2E8F0;
             --gray-300: #CBD5E1;
@@ -58,7 +60,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--gray-900);
             background: var(--white);
             line-height: 1.6;
@@ -88,23 +90,14 @@
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--white);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 2px;
         }
 
-        .logo .dot {
-            color: var(--green);
-        }
-
-        .logo svg {
-            width: 28px;
-            height: 28px;
-            margin-right: 8px;
+        .logo img {
+            height: 32px;
+            width: auto;
         }
 
         nav {
@@ -185,7 +178,7 @@
             right: -50px;
             width: 700px;
             height: 700px;
-            background: radial-gradient(circle, rgba(0, 210, 106, 0.12) 0%, rgba(0, 210, 106, 0.04) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(84, 255, 227, 0.12) 0%, rgba(84, 255, 227, 0.04) 40%, transparent 70%);
             pointer-events: none;
         }
 
@@ -200,8 +193,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 210, 106, 0.1);
-            border: 1px solid rgba(0, 210, 106, 0.2);
+            background: rgba(84, 255, 227, 0.1);
+            border: 1px solid rgba(84, 255, 227, 0.2);
             color: var(--green);
             font-size: 13px;
             font-weight: 500;
@@ -276,7 +269,7 @@
         .btn-primary:hover {
             background: var(--green-light);
             transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(0, 210, 106, 0.3);
+            box-shadow: 0 4px 16px rgba(84, 255, 227, 0.3);
         }
 
         .btn-primary svg {
@@ -455,7 +448,7 @@
             font-size: 11px;
             font-weight: 600;
             color: var(--green);
-            background: rgba(0, 210, 106, 0.1);
+            background: rgba(84, 255, 227, 0.1);
             padding: 3px 10px;
             border-radius: 10px;
         }
@@ -600,8 +593,8 @@
         .ai-icon-large {
             width: 80px;
             height: 80px;
-            background: rgba(0, 210, 106, 0.1);
-            border: 1px solid rgba(0, 210, 106, 0.2);
+            background: rgba(84, 255, 227, 0.1);
+            border: 1px solid rgba(84, 255, 227, 0.2);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -760,7 +753,7 @@
         .contact-form textarea:focus {
             outline: none;
             border-color: var(--green);
-            box-shadow: 0 0 0 3px rgba(0, 210, 106, 0.1);
+            box-shadow: 0 0 0 3px rgba(84, 255, 227, 0.1);
         }
 
         .contact-form textarea {
@@ -883,12 +876,7 @@
 <header>
     <div class="container header-inner">
         <a href="#" class="logo">
-            <svg aria-hidden="true" viewBox="0 0 28 28" fill="none">
-                <rect x="2" y="6" width="24" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <rect x="6" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.8"/>
-                <rect x="15" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.4"/>
-            </svg>
-            kontainer<span class="dot">.sh</span>
+            <img src="assets/logo-negativ.png" alt="KONTAINER.SH">
         </a>
         <button class="burger" onclick="this.classList.toggle('open');document.querySelector('nav').classList.toggle('open')" aria-label="Menü">
             <span></span><span></span><span></span>
@@ -947,13 +935,13 @@
             <div class="ring-chart">
                 <svg aria-hidden="true" viewBox="0 0 200 200">
                     <!-- Outer decorative ring with tick marks -->
-                    <circle cx="100" cy="100" r="96" fill="none" stroke="#1E293B" stroke-width="1"/>
-                    <circle cx="100" cy="100" r="96" fill="none" stroke="#2a3a50" stroke-width="2"
+                    <circle cx="100" cy="100" r="96" fill="none" stroke="#3D4556" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="96" fill="none" stroke="#4A5268" stroke-width="2"
                         stroke-dasharray="2 10.1" stroke-dashoffset="0"/>
                     <!-- Background ring -->
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="#1E293B" stroke-width="20"/>
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3D4556" stroke-width="20"/>
                     <!-- Green segment (35%) -->
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="#00D26A" stroke-width="20"
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="#54FFE3" stroke-width="20"
                         stroke-dasharray="168 335" stroke-dashoffset="0" stroke-linecap="round"/>
                     <!-- Teal segment (25%) -->
                     <circle cx="100" cy="100" r="80" fill="none" stroke="#2DD4BF" stroke-width="20"
@@ -965,12 +953,12 @@
                     <circle cx="100" cy="100" r="80" fill="none" stroke="#8B5CF6" stroke-width="20"
                         stroke-dasharray="67 436" stroke-dashoffset="-402" stroke-linecap="round"/>
                     <!-- Inner decorative ring -->
-                    <circle cx="100" cy="100" r="64" fill="none" stroke="#1E293B" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="64" fill="none" stroke="#3D4556" stroke-width="1"/>
                     <!-- Segment boundary dots -->
-                    <circle cx="100" cy="20" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
-                    <circle cx="66" cy="168" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
-                    <circle cx="170" cy="130" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
-                    <circle cx="165" cy="48" r="3" fill="#0B1120" stroke="#2a3a50" stroke-width="1"/>
+                    <circle cx="100" cy="20" r="3" fill="#2B3040" stroke="#4A5268" stroke-width="1"/>
+                    <circle cx="66" cy="168" r="3" fill="#2B3040" stroke="#4A5268" stroke-width="1"/>
+                    <circle cx="170" cy="130" r="3" fill="#2B3040" stroke="#4A5268" stroke-width="1"/>
+                    <circle cx="165" cy="48" r="3" fill="#2B3040" stroke="#4A5268" stroke-width="1"/>
                 </svg>
                 <div class="ring-chart-center">
                     <div class="label">AI</div>
@@ -1231,12 +1219,7 @@
 <footer>
     <div class="container footer-inner">
         <a href="#" class="logo">
-            <svg aria-hidden="true" viewBox="0 0 28 28" fill="none">
-                <rect x="2" y="6" width="24" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                <rect x="6" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.8"/>
-                <rect x="15" y="10" width="7" height="8" rx="1" fill="#00D26A" opacity="0.4"/>
-            </svg>
-            kontainer<span class="dot">.sh</span>
+            <img src="assets/logo-negativ.png" alt="KONTAINER.SH">
         </a>
         <div class="footer-links">
             <a href="impressum.html">Impressum</a>
