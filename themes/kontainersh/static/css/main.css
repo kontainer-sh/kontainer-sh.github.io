@@ -200,8 +200,12 @@ footer { background: var(--dark); padding: 48px 0; border-top: 1px solid var(--d
     .hero-grid, .leistungen-body { grid-template-columns: 1fr; gap: 40px; }
     .problem-grid { grid-template-columns: 1fr; gap: 40px; }
     .ring-chart { width: 300px; height: 300px; }
-    .ring-chart-labels { display: none; }
-    .ring-chart-wrapper { justify-content: center; }
+    .ring-chart-wrapper { flex-direction: column; gap: 24px; }
+    .ring-chart-labels {
+        position: static; display: grid; grid-template-columns: 1fr 1fr;
+        gap: 16px; width: 100%; max-width: 380px;
+    }
+    .ring-label { position: static; white-space: normal; }
     .contact-form { grid-template-columns: 1fr; }
 }
 
