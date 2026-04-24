@@ -202,6 +202,7 @@ footer { background: var(--dark); padding: 48px 0; border-top: 1px solid var(--d
     .ring-chart-wrapper { flex-direction: column; align-items: center; gap: 0; }
     .ring-chart { width: 300px; height: auto; }
     .ring-chart > svg { width: 300px; height: 300px; }
+    .ring-chart-center { top: 150px; }
     .ring-chart-labels {
         position: relative; top: auto; left: auto; width: 100%; height: auto;
         display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
@@ -227,6 +228,7 @@ footer { background: var(--dark); padding: 48px 0; border-top: 1px solid var(--d
     .hero-buttons .btn-secondary { text-align: center; justify-content: center; }
     .ring-chart { width: 240px; }
     .ring-chart > svg { width: 240px; height: 240px; }
+    .ring-chart-center { top: 120px; }
     .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
 }
