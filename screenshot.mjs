@@ -7,7 +7,9 @@ const htmlPath = join(__dirname, 'public', 'index.html');
 
 const viewports = [
     { name: 'desktop', width: 1440, height: 900 },
+    { name: 'tablet-lg', width: 1024, height: 768 },
     { name: 'tablet', width: 768, height: 1024 },
+    { name: 'mobile-lg', width: 480, height: 854 },
     { name: 'mobile', width: 375, height: 812 },
 ];
 
