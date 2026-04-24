@@ -1,9 +1,29 @@
 # TODO – kontainer.sh Homepage
 
-## Offen
+## Offen – Funktionalität
 
 - [ ] **blog.html fehlt** – Im Nav verlinkt, Seite existiert nicht. Platzhalter oder Link entfernen.
 - [ ] **Kontaktformular Platzhalter** – Formspree-Action ist `placeholder`, Formular funktioniert nicht produktiv. Echte Formspree-ID oder Alternative nötig.
+
+## Offen – Visuelles Polish (Prio hoch → niedrig)
+
+### Hoher Impact
+- [ ] **Hover-Effekte** – Feature-Items, Report-Card, Tech-Tags, Nav-Links reagieren nicht auf Hover. Subtile Transitions (Lift, Border-Color, Hintergrund-Shift).
+- [ ] **Report-Card aufwerten** – Box-Shadow, Zeilentrenner, Severity-Badges (rot/gelb/grün) vor Risiken.
+- [ ] **Problem-Sektion visuell auflockern** – Farbige Dots zu klein (8px), größere Icons oder Akzente bei Spalten-Headings.
+- [ ] **Mindestens ein Bild** – Seite ist 100% Text+SVG. Foto/Illustration in Erfahrung-Sektion für Vertrauen/Persönlichkeit.
+
+### Mittlerer Impact
+- [ ] **Brand-Keyvisual als Hintergrund-Motiv** – Verschlungene Kreise dezent/halbtransparent in 1-2 Sektionen.
+- [ ] **Sektionsübergänge glätten** – Dunkel→Weiß→Grau wechselt hart. Subtile Trennlinien oder Gradient-Overlaps.
+- [ ] **Ring-Chart Labels mit Verbindungslinien** – Dünne Linien von Labels zu Segmenten wie bei Infografiken.
+- [ ] **Scroll-Animationen** – Fade-in-up bei Scroll für progressive Sichtbarkeit.
+
+### Nice-to-have
+- [ ] **Footer erweitern** – Kurze Wiederholung des Value-Prop.
+- [ ] **Ring-Chart Segmente animiert einlaufen** – Beim ersten Sichtbar-werden.
+- [ ] **Erfahrung-Sektion Hintergrund** – Dezentes Foto oder Pattern.
+- [ ] **Dark-Mode Support** – Seite ist eh halb-dunkel, vollständiger Dark-Mode wäre wenig Aufwand.
 
 ## Erledigt
 
@@ -28,6 +48,8 @@
 - [x] Anker-Links vollständig
 - [x] SEO Meta-Tags, OG, Twitter-Card
 - [x] Accessibility (aria-labels, aria-hidden)
+- [x] Responsive auf allen Breakpoints (375–1440px)
+- [x] Automatisiertes Prüfskript (check.mjs, 59 Checks)
 
 ### Firmendaten
 - [x] Impressum mit echten Daten (KONTAINER.SH GmbH, HRB 725522)
