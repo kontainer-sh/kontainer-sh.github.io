@@ -132,8 +132,17 @@
         .ring-chart-center .label { font-size: 13px; color: var(--gray-400); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
         .ring-chart-center .title { font-size: 20px; font-weight: 700; color: var(--white); line-height: 1.3; }
         .ring-chart-labels { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-        .ring-label { position: absolute; font-size: 11px; font-weight: 600; color: var(--gray-400); white-space: nowrap; }
-        .ring-label .ring-label-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+        .ring-label {
+            position: absolute; font-size: 11px; color: var(--gray-400); white-space: nowrap;
+        }
+        .ring-label-step {
+            display: block; font-size: 10px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--green); margin-bottom: 3px;
+        }
+        .ring-label-desc {
+            display: block; font-size: 11px; font-weight: 400; color: var(--gray-400); line-height: 1.4;
+            white-space: normal; max-width: 160px;
+        }
 
         /* ===================== LEISTUNGEN ===================== */
         .leistungen { padding: 96px 0; background: var(--white); }
@@ -337,9 +346,18 @@
                     <div class="title">Project<br>Intelligence</div>
                 </div>
                 <div class="ring-chart-labels">
-                    <span class="ring-label" style="top:5%;right:-15%"><span class="ring-label-dot" style="background:#54FFE3"></span>erfassen</span>
-                    <span class="ring-label" style="bottom:5%;right:-15%"><span class="ring-label-dot" style="background:#2DD4BF"></span>bewerten</span>
-                    <span class="ring-label" style="bottom:5%;left:0"><span class="ring-label-dot" style="background:#F59E0B"></span>empfehlen</span>
+                    <span class="ring-label" style="top:2%;right:-45%">
+                        <span class="ring-label-step">erfassen</span>
+                        <span class="ring-label-desc">Code, Architektur,<br>Tickets &amp; Konten</span>
+                    </span>
+                    <span class="ring-label" style="bottom:8%;right:-45%">
+                        <span class="ring-label-step">bewerten</span>
+                        <span class="ring-label-desc">Risiken, Qualität<br>&amp; Tech Debt</span>
+                    </span>
+                    <span class="ring-label" style="bottom:8%;left:-35%">
+                        <span class="ring-label-step">empfehlen</span>
+                        <span class="ring-label-desc">Priorisierte Maßnahmen<br>&amp; konkrete Empfehlungen</span>
+                    </span>
                 </div>
             </div>
         </div>
