@@ -14,9 +14,9 @@
 
 ## Priorität 3: SEO & Meta
 
-- [ ] **Meta-Tags** – Description, OG-Tags, Twitter-Card für Social Sharing
-- [ ] **Favicon** – Fehlt komplett
-- [ ] **Semantisches HTML prüfen** – Landmark-Roles, aria-Labels, alt-Texte
+- [x] **Meta-Tags** – Description, OG, Twitter-Card auf allen Seiten
+- [x] **Favicon** – SVG-Favicon aus Logo abgeleitet
+- [x] **Semantisches HTML prüfen** – aria-label auf allen Sections, aria-hidden auf 18 SVGs, nav role
 
 ## Priorität 4: Code-Qualität
 
