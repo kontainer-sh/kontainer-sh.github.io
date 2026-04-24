@@ -1,0 +1,22 @@
+{{ if eq .Type "legal" }}
+<footer class="legal-footer">&copy; {{ now.Year }} {{ .Site.Title }}</footer>
+{{ else }}
+<footer>
+    <div class="container footer-inner">
+        <a href="{{ "/" | relURL }}" class="logo">
+            <img src="{{ "images/logo-negativ.png" | relURL }}" alt="KONTAINER.SH">
+        </a>
+        <div class="footer-links">
+            <a href="{{ "impressum/" | relURL }}">Impressum</a>
+            <a href="{{ "datenschutz/" | relURL }}">Datenschutz</a>
+            <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+            <a href="{{ .Site.Params.githubURL }}" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 .2A8 8 0 0 0 5.47 15.79c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 8 .2z"/></svg>
+            </a>
+            <a href="{{ .Site.Params.linkedinURL }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M13.6 1H2.4C1.6 1 1 1.6 1 2.4v11.2c0 .8.6 1.4 1.4 1.4h11.2c.8 0 1.4-.6 1.4-1.4V2.4c0-.8-.6-1.4-1.4-1.4zM5.2 13H3.1V6.3h2.1V13zM4.1 5.4c-.7 0-1.2-.6-1.2-1.2S3.5 3 4.1 3c.7 0 1.2.6 1.2 1.2s-.5 1.2-1.2 1.2zM13 13h-2.1V9.7c0-.8 0-1.8-1.1-1.8s-1.3.9-1.3 1.7V13H6.4V6.3h2v.9c.3-.5 1-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2V13z"/></svg>
+            </a>
+        </div>
+    </div>
+</footer>
+{{ end }}

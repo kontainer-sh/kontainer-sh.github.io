@@ -1,0 +1,227 @@
+{{ define "main" }}
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" aria-label="Hero">
+    <div class="container hero-grid">
+        <div>
+            <div class="hero-badge">
+                <svg aria-hidden="true" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 1L8.5 5.5L13 7L8.5 8.5L7 13L5.5 8.5L1 7L5.5 5.5L7 1Z" fill="currentColor"/>
+                </svg>
+                KI-gestützte Code &amp; Projektanalyse
+            </div>
+            <h1>Verstehen Sie in 48h, wie gut Ihr Softwareprojekt wirklich ist.</h1>
+            <p class="hero-subtitle">Besonders bei AI-generiertem, gewachsenem oder schwer durchschaubarem Code.</p>
+            <ul class="hero-checks">
+                <li>
+                    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Code, Architektur und Tickets werden analysiert
+                </li>
+                <li>
+                    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Risiken und Tech Debt werden sichtbar
+                </li>
+                <li>
+                    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Konkrete Maßnahmen und nächste Schritte
+                </li>
+            </ul>
+            <div class="hero-buttons">
+                <a href="#kontakt" class="btn-primary">
+                    Code Health Check anfragen
+                    <svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3.333 8H12.667M12.667 8L8 3.333M12.667 8L8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#beispiel-report" class="btn-secondary">Beispiel-Report ansehen</a>
+            </div>
+            <div class="hero-trust">
+                <span class="hero-trust-item">
+                    <svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L4 4v4c0 3.5 4 5.5 4 5.5s4-2 4-5.5V4L8 1.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Vertraulich
+                </span>
+                <span class="hero-trust-item">
+                    <svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zM8 5v3l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    In 48–72h Ergebnisse
+                </span>
+                <span class="hero-trust-item">
+                    <svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M13.333 5L6.5 11.833 2.667 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Kein Zugriff auf Produktion nötig
+                </span>
+            </div>
+        </div>
+        <div class="ring-chart-wrapper">
+            {{ partial "ring-chart.html" . }}
+        </div>
+    </div>
+</section>
+
+<!-- ==================== LEISTUNGEN ==================== -->
+<section class="leistungen" id="leistungen" aria-label="Leistungen">
+    <div class="container">
+        <div class="leistungen-top">
+            <span class="section-label">Unser Einstieg</span>
+            <h2>AI Project Health Check</h2>
+            <p>In wenigen Tagen erhalten Sie eine klare Einschätzung Ihres Projekts – inklusive konkreter Handlungsempfehlungen.</p>
+        </div>
+        <div class="leistungen-body">
+            <div class="features-compact">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M4 6h12M4 10h12M4 14h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <div><h3>Analyse von Code, Struktur und Abhängigkeiten</h3></div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M3 15l3.5-3.5 3.5 3.5 3.5-7 3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div><h3>Top 5–10 priorisierte Maßnahmen</h3></div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div><h3>Bewertung von Wartbarkeit und Risiken</h3></div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M3 3h5.5v5.5H3zM11.5 3H17v5.5h-5.5zM3 11.5h5.5V17H3zM11.5 11.5H17V17h-5.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div><h3>Optional: direkt nutzbare Tickets</h3></div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <div><h3>Identifikation von Tech Debt</h3></div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg aria-hidden="true" viewBox="0 0 20 20" fill="none"><path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <div><h3>Verständlich, umsetzbar, auf den Punkt</h3></div>
+                </div>
+            </div>
+            <div class="report-card" id="beispiel-report">
+                <div class="report-card-header">
+                    <h3>AI Project Health Report</h3>
+                    <span class="report-card-badge">Beispiel (gekürzt)</span>
+                </div>
+                <div class="report-section-title">Top Risiken</div>
+                <ul class="report-list risks">
+                    <li>Hohe Komplexität in Modul X</li>
+                    <li>Testabdeckung (32%)</li>
+                    <li>Veraltete Abhängigkeiten</li>
+                    <li>Fehlende Dokumentation</li>
+                </ul>
+                <div class="report-section-title">Top Maßnahmen</div>
+                <ul class="report-list actions">
+                    <li>Tests für kritische Services ergänzen</li>
+                    <li>Abhängigkeiten aktualisieren</li>
+                    <li>Modul X entkoppeln und vereinfachen</li>
+                    <li>Architektur dokumentieren</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FÜR WEN / PROBLEM / ERGEBNIS ==================== -->
+<section class="problem-section" aria-label="Für wen">
+    <div class="container problem-grid">
+        <div class="problem-col">
+            <h2>Für wen?</h2>
+            <ul class="problem-list">
+                <li><span class="indicator" style="background:var(--green)"></span>Teams, die AI / Low-Code einsetzen</li>
+                <li><span class="indicator" style="background:var(--purple)"></span>Projekte mit wachsender Komplexität</li>
+                <li><span class="indicator" style="background:var(--teal)"></span>Tech Leads, die Entscheidungen treffen müssen</li>
+            </ul>
+        </div>
+        <div class="problem-col">
+            <h2>Das Problem</h2>
+            <p>Schnell entsteht komplexer Code, neue Tools und technische Schulden.</p>
+            <p>Der Überblick geht verloren.</p>
+        </div>
+        <div class="problem-col">
+            <h2>Unser Ergebnis</h2>
+            <ul class="result-list">
+                <li><strong>+</strong> Klarheit statt Bauchgefühl</li>
+                <li><strong>+</strong> Prioritäten statt endloser Diskussionen</li>
+                <li><strong>+</strong> Bessere Entscheidungen, schneller</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== AI ANALYSE ==================== -->
+<section class="ai-section" id="vorgehen" aria-label="Vorgehen">
+    <div class="container">
+        <div class="ai-content-full">
+            <h2>AI-unterstützte Analyse statt klassischer Beratung</h2>
+            <p>Ich arbeite nicht operativ im Projekt, sondern unterstütze Teams dabei, schneller bessere technische Entscheidungen zu treffen.</p>
+            <p>Durch den Einsatz von AI entstehen strukturierte Analysen, Dokumentationen und Handlungsempfehlungen – in einem Bruchteil der üblichen Zeit.</p>
+        </div>
+        <div class="ai-optional">
+            <h3>Kontinuierliche Begleitung (optional)</h3>
+            <p>Für Teams, die dauerhaft Unterstützung möchten, biete ich eine laufende, AI-gestützte Beratung:</p>
+            <div class="ai-optional-items">
+                <span>Architektur &amp; Entscheidungen</span>
+                <span>PoCs (z.B. RAG, lokale LLMs)</span>
+                <span>Automatisierung von Entwicklungsprozessen</span>
+                <span>Regelmäßige Reviews &amp; Sparring</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== ERFAHRUNG ==================== -->
+<section class="erfahrung-section" id="ueber-mich" aria-label="Erfahrung">
+    <div class="container erfahrung-inner">
+        <h2>Erfahrung aus komplexen Projekten</h2>
+        <blockquote class="quote">Helge versteht es, komplexe Systeme schnell zu durchdringen und die richtigen Fragen zu stellen. Die AI-gestützten Analysen geben unserem Team Klarheit und Richtung.</blockquote>
+        <p class="quote-attr">– Kunde (vertraulich)</p>
+        <div class="tech-tags">
+            <span class="tech-tag">AI-gestützte Workflows</span>
+            <span class="tech-tag">RAG &amp; LLM Lösungen</span>
+            <span class="tech-tag">DevOps &amp; Kubernetes</span>
+            <span class="tech-tag">Gewachsene Codebasen</span>
+            <span class="tech-tag">Cloud &amp; On-Prem</span>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-section" id="kontakt" aria-label="Kontakt">
+    <div class="container cta-inner">
+        <h2>Lassen Sie uns Ihr Projekt gemeinsam anschauen.</h2>
+        <p class="cta-sub">Ein klarer Blick von außen spart Zeit, Geld und Nerven.</p>
+        <form class="contact-form"
+              {{ with .Site.Params.formspreeEndpoint }}action="{{ . }}" method="POST"
+              {{ else }}action="mailto:{{ $.Site.Params.email }}" method="POST" enctype="text/plain"
+              {{ end }}>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Ihr Name">
+            </div>
+            <div>
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required placeholder="ihre@email.de">
+            </div>
+            <div class="full-width">
+                <label for="company">Unternehmen</label>
+                <input type="text" id="company" name="company" placeholder="Firma GmbH">
+            </div>
+            <div class="full-width">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" placeholder="Erzählen Sie uns kurz von Ihrem Projekt..."></textarea>
+            </div>
+            <div class="full-width" style="text-align:center;">
+                <button type="submit" class="btn-primary">
+                    Code Health Check starten
+                    <svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="M3.333 8H12.667M12.667 8L8 3.333M12.667 8L8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+{{ end }}

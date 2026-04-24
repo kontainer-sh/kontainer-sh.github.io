@@ -1,0 +1,6 @@
+name = "kontainersh"
+description = "Custom theme for kontainer.sh"
+min_version = "0.100.0"
+
+[author]
+  name = "KONTAINER.SH GmbH"
