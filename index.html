@@ -706,6 +706,56 @@
             letter-spacing: -0.02em;
         }
 
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 6px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--gray-900);
+            background: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(0, 210, 106, 0.1);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form .btn-primary {
+            justify-content: center;
+        }
+
         /* ===================== FOOTER ===================== */
         footer {
             background: var(--dark);
@@ -831,8 +881,8 @@
             <a href="#leistungen">Leistungen</a>
             <a href="#vorgehen">Vorgehen</a>
             <a href="#referenzen">Referenzen</a>
-            <a href="#blog">Blog</a>
-            <a href="#preise">Preise</a>
+            <a href="blog.html">Blog</a>
+            <a href="preise.html">Preise</a>
             <a href="#kontakt" class="btn-contact">Kontakt</a>
         </nav>
     </div>
@@ -1071,7 +1121,7 @@
 </section>
 
 <!-- ==================== AI ANALYSE ==================== -->
-<section class="ai-section">
+<section class="ai-section" id="vorgehen">
     <div class="container">
         <div class="ai-grid">
             <div class="ai-icon-large">
@@ -1134,10 +1184,30 @@
 <section class="cta-section" id="kontakt">
     <div class="container cta-inner">
         <h2>Lassen Sie uns Ihr Projekt gemeinsam anschauen.</h2>
-        <a href="mailto:kontakt@kontainer.sh" class="btn-primary">
-            Gespräch vereinbaren
-            <svg viewBox="0 0 16 16" fill="none"><path d="M3.333 8H12.667M12.667 8L8 3.333M12.667 8L8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Ihr Name">
+            </div>
+            <div>
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required placeholder="ihre@email.de">
+            </div>
+            <div class="full-width">
+                <label for="company">Unternehmen</label>
+                <input type="text" id="company" name="company" placeholder="Firma GmbH">
+            </div>
+            <div class="full-width">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" placeholder="Erzählen Sie uns kurz von Ihrem Projekt..."></textarea>
+            </div>
+            <div class="full-width" style="text-align:center;">
+                <button type="submit" class="btn-primary">
+                    Gespräch vereinbaren
+                    <svg viewBox="0 0 16 16" fill="none"><path d="M3.333 8H12.667M12.667 8L8 3.333M12.667 8L8 12.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -1153,9 +1223,9 @@
             kontainer<span class="dot">.sh</span>
         </a>
         <div class="footer-links">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">AGB</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
         </div>
         <span class="footer-copy">&copy; 2026 kontainer.sh</span>
     </div>

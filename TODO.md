@@ -8,9 +8,9 @@
 
 ## Priorität 2: Funktionalität
 
-- [ ] **Fehlende Anker-Ziele** – Nav-Links #blog, #preise, #vorgehen zeigen ins Leere
-- [ ] **Kontaktformular** – CTA verlinkt auf mailto, evtl. echtes Formular oder Calendly-Embed
-- [ ] **Footer-Links** – Impressum, Datenschutz, AGB verlinken auf #
+- [x] **Fehlende Anker-Ziele** – #vorgehen auf AI-Sektion, Blog/Preise auf eigene Seiten
+- [x] **Kontaktformular** – Formular mit Name, E-Mail, Unternehmen, Nachricht (Formspree-ready)
+- [x] **Footer-Links** – Platzhalter-Seiten für Impressum, Datenschutz, AGB erstellt
 
 ## Priorität 3: SEO & Meta
 
