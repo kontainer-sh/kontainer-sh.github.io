@@ -1,3 +1,5 @@
+{{ $labels := .Site.Data.homepage.ring_labels }}
+{{ $positions := slice "rl-top-right" "rl-bottom-right" "rl-bottom-left" "rl-top-left" }}
 <div class="ring-chart">
     <svg aria-hidden="true" viewBox="0 0 200 200">
         <circle cx="100" cy="100" r="96" fill="none" stroke="#3D4556" stroke-width="1"/>
@@ -18,21 +20,11 @@
         <div class="title">Project<br>Intelligence</div>
     </div>
     <div class="ring-chart-labels">
-        <span class="ring-label rl-top-right">
-            <span class="ring-label-step">erfassen</span>
-            <span class="ring-label-desc">Code, Architektur,<br>Tickets &amp; Konten</span>
+        {{ range $i, $l := $labels }}
+        <span class="ring-label {{ index $positions $i }}">
+            <span class="ring-label-step">{{ $l.step }}</span>
+            <span class="ring-label-desc">{{ $l.desc }}</span>
         </span>
-        <span class="ring-label rl-bottom-right">
-            <span class="ring-label-step">bewerten</span>
-            <span class="ring-label-desc">Risiken, Qualität<br>&amp; Tech Debt</span>
-        </span>
-        <span class="ring-label rl-bottom-left">
-            <span class="ring-label-step">empfehlen</span>
-            <span class="ring-label-desc">Priorisierte Maßnahmen<br>&amp; konkrete Empfehlungen</span>
-        </span>
-        <span class="ring-label rl-top-left">
-            <span class="ring-label-step">verstehen</span>
-            <span class="ring-label-desc">Entscheidungen treffen<br>&amp; kontinuierlich verbessern</span>
-        </span>
+        {{ end }}
     </div>
 </div>

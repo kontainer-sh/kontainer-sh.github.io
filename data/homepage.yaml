@@ -1,0 +1,124 @@
+# ============================================================
+# Homepage-Inhalte – kontainer.sh
+# Alle Texte der Startseite an einem Ort.
+# ============================================================
+
+# --- HERO ---
+hero:
+  badge: "KI-gestützte Code & Projektanalyse"
+  headline: "Verstehen Sie in 48h, wie gut Ihr Softwareprojekt wirklich ist."
+  subtitle: "Besonders bei AI-generiertem, gewachsenem oder schwer durchschaubarem Code."
+  checks:
+    - "Code, Architektur und Tickets werden analysiert"
+    - "Risiken und Tech Debt werden sichtbar"
+    - "Konkrete Maßnahmen und nächste Schritte"
+  cta_primary: "Code Health Check anfragen"
+  cta_secondary: "Beispiel-Report ansehen"
+  trust:
+    - "Vertraulich"
+    - "In 48–72h Ergebnisse"
+    - "Kein Zugriff auf Produktion nötig"
+
+# --- RING-CHART LABELS ---
+ring_labels:
+  - step: "erfassen"
+    desc: "Code, Architektur, Tickets & Konten"
+  - step: "bewerten"
+    desc: "Risiken, Qualität & Tech Debt"
+  - step: "empfehlen"
+    desc: "Priorisierte Maßnahmen & konkrete Empfehlungen"
+  - step: "verstehen"
+    desc: "Entscheidungen treffen & kontinuierlich verbessern"
+
+# --- LEISTUNGEN ---
+leistungen:
+  label: "Unser Einstieg"
+  headline: "AI Project Health Check"
+  description: "In wenigen Tagen erhalten Sie eine klare Einschätzung Ihres Projekts – inklusive konkreter Handlungsempfehlungen."
+  features:
+    - "Analyse von Code, Struktur und Abhängigkeiten"
+    - "Top 5–10 priorisierte Maßnahmen"
+    - "Bewertung von Wartbarkeit und Risiken"
+    - "Optional: direkt nutzbare Tickets"
+    - "Identifikation von Tech Debt"
+    - "Verständlich, umsetzbar, auf den Punkt"
+
+# --- BEISPIEL-REPORT ---
+report:
+  headline: "AI Project Health Report"
+  badge: "Beispiel (gekürzt)"
+  risiken:
+    - "Hohe Komplexität in Modul X"
+    - "Testabdeckung (32%)"
+    - "Veraltete Abhängigkeiten"
+    - "Fehlende Dokumentation"
+  massnahmen:
+    - "Tests für kritische Services ergänzen"
+    - "Abhängigkeiten aktualisieren"
+    - "Modul X entkoppeln und vereinfachen"
+    - "Architektur dokumentieren"
+
+# --- FÜR WEN / PROBLEM / ERGEBNIS ---
+problem:
+  fuer_wen:
+    headline: "Für wen?"
+    items:
+      - text: "Teams, die AI / Low-Code einsetzen"
+        color: "green"
+      - text: "Projekte mit wachsender Komplexität"
+        color: "purple"
+      - text: "Tech Leads, die Entscheidungen treffen müssen"
+        color: "teal"
+  problem:
+    headline: "Das Problem"
+    paragraphs:
+      - "Schnell entsteht komplexer Code, neue Tools und technische Schulden."
+      - "Der Überblick geht verloren."
+  ergebnis:
+    headline: "Unser Ergebnis"
+    items:
+      - "Klarheit statt Bauchgefühl"
+      - "Prioritäten statt endloser Diskussionen"
+      - "Bessere Entscheidungen, schneller"
+
+# --- AI-ANALYSE / VORGEHEN ---
+ai:
+  headline: "AI-unterstützte Analyse statt klassischer Beratung"
+  paragraphs:
+    - "Ich arbeite nicht operativ im Projekt, sondern unterstütze Teams dabei, schneller bessere technische Entscheidungen zu treffen."
+    - "Durch den Einsatz von AI entstehen strukturierte Analysen, Dokumentationen und Handlungsempfehlungen – in einem Bruchteil der üblichen Zeit."
+  optional:
+    headline: "Kontinuierliche Begleitung (optional)"
+    description: "Für Teams, die dauerhaft Unterstützung möchten, biete ich eine laufende, AI-gestützte Beratung:"
+    items:
+      - "Architektur & Entscheidungen"
+      - "PoCs (z.B. RAG, lokale LLMs)"
+      - "Automatisierung von Entwicklungsprozessen"
+      - "Regelmäßige Reviews & Sparring"
+
+# --- ERFAHRUNG ---
+erfahrung:
+  headline: "Erfahrung aus komplexen Projekten"
+  quote: "Helge versteht es, komplexe Systeme schnell zu durchdringen und die richtigen Fragen zu stellen. Die AI-gestützten Analysen geben unserem Team Klarheit und Richtung."
+  quote_attribution: "– Kunde (vertraulich)"
+  tags:
+    - "AI-gestützte Workflows"
+    - "RAG & LLM Lösungen"
+    - "DevOps & Kubernetes"
+    - "Gewachsene Codebasen"
+    - "Cloud & On-Prem"
+
+# --- CTA ---
+cta:
+  headline: "Lassen Sie uns Ihr Projekt gemeinsam anschauen."
+  subtitle: "Ein klarer Blick von außen spart Zeit, Geld und Nerven."
+  button: "Code Health Check starten"
+  form:
+    name_label: "Name"
+    name_placeholder: "Ihr Name"
+    email_label: "E-Mail"
+    email_placeholder: "ihre@email.de"
+    company_label: "Unternehmen"
+    company_placeholder: "Firma GmbH"
+    message_label: "Nachricht"
+    message_placeholder: "Erzählen Sie uns kurz von Ihrem Projekt..."
