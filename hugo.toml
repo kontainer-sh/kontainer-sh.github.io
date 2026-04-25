@@ -1,8 +1,16 @@
 baseURL = "https://kontainer.sh/"
 relativeURLs = true
 languageCode = "de"
+defaultContentLanguage = "de"
 title = "kontainer.sh"
 theme = "kontainersh"
+
+[taxonomies]
+  # Leere Taxonomien deaktivieren (kein /categories/, /tags/)
+
+[sitemap]
+  changeFreq = ""
+  priority = -1
 
 [params]
   description = "Verstehen Sie in 48h, wie gut Ihr Softwareprojekt wirklich ist. KI-gestützter Health Check für Code, Architektur und Prozesse."

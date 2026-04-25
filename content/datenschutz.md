@@ -4,6 +4,7 @@ description: "Datenschutzerklärung von kontainer.sh."
 type: "legal"
 robots: "noindex, follow"
 url: "/datenschutz/"
+sitemap_exclude: true
 ---
 
 ## 1. Verantwortlicher

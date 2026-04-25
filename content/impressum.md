@@ -4,6 +4,7 @@ description: "Impressum von kontainer.sh – Angaben gemäß § 5 TMG."
 type: "legal"
 robots: "noindex, follow"
 url: "/impressum/"
+sitemap_exclude: true
 ---
 
 ## Angaben gemäß § 5 TMG

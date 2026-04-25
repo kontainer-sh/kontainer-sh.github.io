@@ -1,15 +1,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ .Site.Title }} – AI Project Health Check{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ .Description | default .Site.Params.description }}">
+<meta name="description" content="{{ .Site.Params.description }}">
 {{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ else }}<meta name="robots" content="index, follow">{{ end }}
-{{ if .IsHome }}<link rel="canonical" href="{{ .Site.BaseURL }}">
+<link rel="canonical" href="{{ .Permalink }}">
 
+{{ if .IsHome }}
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ .Site.Title }} – AI Project Health Check">
 <meta property="og:description" content="{{ .Site.Params.description }}">
-<meta property="og:url" content="{{ .Site.BaseURL }}">
+<meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:locale" content="de_DE">
 
@@ -18,6 +19,7 @@
 <meta name="twitter:title" content="{{ .Site.Title }} – AI Project Health Check">
 <meta name="twitter:description" content="{{ .Site.Params.description }}">
 {{ end }}
+
 <link rel="icon" href="{{ "favicon-32x32.png" | relURL }}" type="image/png" sizes="32x32">
 <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
 <link rel="apple-touch-icon" href="{{ "images/apple-touch-icon.png" | relURL }}">
